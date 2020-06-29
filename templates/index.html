@@ -1,53 +1,98 @@
 <!doctype html>
-
 <html lang="en" dir="ltr">
   <head>
-    <!-- Add meta charset below -->
     <meta charset="UTF-8" />
-
-    <!-- Add meta name below -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    
-    <!-- Add page title below -->
     <title>Social banners</title>
-    
-    <!-- Add preconnect/dns-prefetch below -->
     <link rel="preconnect" href="https://assets.ubuntu.com">
-    <!-- <link rel="dns-prefetch" href="http://www.spreadfirefox.com/"> -->
-    
-    <!-- Add inline JS below -->
-    <script>// Inline JS</script>
-    
-    <!-- Add stylesheet below -->
     <link rel="stylesheet" type="text/css" media="screen" href="/static/css/styles.css" />
-    
-    <!-- Add inline CSS below -->
-    <style>/* Inline CSS */</style>
-    
-    <!-- Add preload below -->
     <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/e8c07df6-Ubuntu-L_W.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/7f100985-Ubuntu-Th_W.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/f8097dea-Ubuntu-LI_W.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="https://assets.ubuntu.com/v1/fff37993-Ubuntu-R_W.woff2" crossorigin>
-
-    <!-- Add script below -->
-    <!-- <script src=""></script> -->
-
-    <!-- Add prefetch/prerender below -->
-    <!-- <link rel="prefetch" href="/style.css" as="style" />
-    <link rel="prerender" href="https://example.com/about.html" /> -->
+    <style>canvas { margin-left: 0; }</style>
   </head>
 
   <body>
-    <!-- Add navigation below -->
     <main>
-      <!-- Add main content below -->
       <div class="p-strip--dark">
         <div class="u-fixed-width">
-	    <h1>Social banners</h1>
+	        <h1>Social banners</h1>
         </div>
       </div>
+
+      <section class="p-strip is-bordered">
+        <div class="row">
+          <div class="col-8">
+            <form>
+              <label for="title">Title</label>
+              <input type="text" name="title" id="title" value="{{ banner_data.title }}" required>
+
+              <label for="subtitle">Subtitle</label>
+              <textarea name="subtitle" id="subtitle">{{ banner_data.subtitle }}</textarea>
+
+              <label for="illustration_url">Illustration URL</label>
+              <input type="url" name="illustration_url" id="illustration_url" value="{{ banner_data.illustration_url }}" required>
+
+              <label for="background">Background</label>
+              <select name="background" id="background" value="{{ banner_data.background }}" required>
+                <option value="grad" {% if banner_data.background == 'grad' %}selected{% endif %}>grad</option>
+                <option value="dark" {% if banner_data.background == 'dark' %}selected{% endif %}>dark</option>
+                <option value="k8s" {% if banner_data.background == 'k8s' %}selected{% endif %}>k8s</option>
+                <option value="aqua" {% if banner_data.background == 'aqua' %}selected{% endif %}>aqua</option>
+                <option value="snapcraft" {% if banner_data.background == 'snapcraft' %}selected{% endif %}>snapcraft</option>
+              </select>
+
+              <button type="submit" class="p-button--positive">Generate banner</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-strip">
+        <div class="u-fixed-width">
+          <h2>Preview</h2>
+
+          <img class="u-hide" id="ubuntu-logo" src="https://assets.ubuntu.com/v1/f263d9c4-logo-ubuntu-white.svg" alt="Ubuntu" width="143" height="32">
+
+          <h4>Facebook &amp; LinkedIn - 1200 x 628</h4>
+          <canvas id="facebook" width="1200" height="628">
+            Your browser does not support the HTML5 canvas tag.
+          </canvas>
+
+          <h4>Facebook mobile - 1080 x 1080</h4>
+          <canvas id="facebookmobile" width="1080" height="1080">
+            Your browser does not support the HTML5 canvas tag.
+          </canvas>
+
+          <h4>Facebook 9:16 - 400 x 500</h4>
+          <canvas id="facebook916" width="400" height="500">
+            Your browser does not support the HTML5 canvas tag.
+          </canvas>
+
+          <h4>Twitter wide - 800 x 418</h4>
+          <canvas id="twitter" width="800" height="418">
+            Your browser does not support the HTML5 canvas tag.
+          </canvas>
+
+          <h4>Twitter square - 800 x 800</h4>
+          <canvas id="twittersquare" width="800" height="800">
+            Your browser does not support the HTML5 canvas tag.
+          </canvas>
+        </div>
+      </section>
     </main>
-    <!-- Add footer below -->
+
+    <script src="{{ versioned_static('js/dist/main.js') }}"></script>
+    <script>
+      if (window.generateBannerCanvas) {
+        window.generateBannerCanvas.generateBannerCanvas({
+          title: "{{ banner_data.title }}",
+          subtitle: "{{ banner_data.subtitle }}",
+          illustrationUrl: "{{ banner_data.illustration_url }}",
+          background: "{{ banner_data.background }}",
+        });
+      }
+    </script>
   </body>
 </html>
