@@ -1,4 +1,4 @@
-import { addText } from "./text";
+import { setText } from "./text";
 import { addUbuntuLogo, addIllustration } from "./images";
 import {
   createColorGradient,
@@ -30,37 +30,32 @@ function generateBannerCanvas(options) {
   createMidGreyGradient(ctxfacebook);
 
   addUbuntuLogo(ctxfacebook, {
-    x: 100,
-    y: 219.8,
-    width: 143,
-    height: 32,
+    x: 70,
+    y: 52,
+    width: 241,
+    height: 64,
   });
 
   addIllustration(ctxfacebook, options.illustrationUrl, {
-    x: 720,
-    y: 192,
-    width: 244,
-    height: 250,
+    orientation: "right",
   });
 
-  addText(ctxfacebook, {
-    fontWeight: 100,
-    fontSize: 46,
-    text: options.title,
-    x: 100,
-    y: 314.8,
-    maxWidth: 400,
-    lineHeight: 48,
-  });
-
-  addText(ctxfacebook, {
-    fontWeight: 300,
-    fontSize: 20.8979,
-    text: options.subtitle,
-    x: 100,
-    y: 420.8,
-    maxWidth: 400,
-    lineHeight: 30,
+  setText(ctxfacebook, {
+    width: 560,
+    x: 70,
+    y: 210,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 64,
+      lineHeight: 74,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 20,
+      lineHeight: 32,
+    },
   });
 
   // FACEBOOK MOBILE
@@ -85,37 +80,32 @@ function generateBannerCanvas(options) {
   createMidGreyGradient(ctxfacebookmobile);
 
   addUbuntuLogo(ctxfacebookmobile, {
-    x: 100,
-    y: 378,
-    width: 143,
-    height: 32,
+    x: 70,
+    y: 52,
+    width: 295,
+    height: 79,
   });
 
   addIllustration(ctxfacebookmobile, options.illustrationUrl, {
-    x: 648,
-    y: 418,
-    width: 244,
-    height: 250,
+    orientation: "bottom",
   });
 
-  addText(ctxfacebookmobile, {
-    fontWeight: 100,
-    fontSize: 46,
-    text: options.title,
-    x: 100,
-    y: 473,
-    maxWidth: 400,
-    lineHeight: 48,
-  });
-
-  addText(ctxfacebookmobile, {
-    fontWeight: 300,
-    fontSize: 20.8979,
-    text: options.subtitle,
-    x: 100,
-    y: 579,
-    maxWidth: 400,
-    lineHeight: 30,
+  setText(ctxfacebookmobile, {
+    width: 800,
+    x: 70,
+    y: 230,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 76,
+      lineHeight: 90,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 24,
+      lineHeight: 38,
+    },
   });
 
   // FACEBOOK916
@@ -140,37 +130,32 @@ function generateBannerCanvas(options) {
   createMidGreyGradient(ctxfacebook916);
 
   addUbuntuLogo(ctxfacebook916, {
-    x: 30,
-    y: 175,
-    width: 143,
-    height: 32,
+    x: 43,
+    y: 24,
+    width: 139,
+    height: 37,
   });
 
   addIllustration(ctxfacebook916, options.illustrationUrl, {
-    x: 30,
-    y: 50,
-    width: 102,
-    height: 100,
+    orientation: "bottom",
   });
 
-  addText(ctxfacebook916, {
-    fontWeight: 100,
-    fontSize: 36,
-    text: options.title,
-    x: 30,
-    y: 265,
-    maxWidth: 320,
-    lineHeight: 48,
-  });
-
-  addText(ctxfacebook916, {
-    fontWeight: 300,
-    fontSize: 20.8979,
-    text: options.subtitle,
-    x: 30,
-    y: 366,
-    maxWidth: 320,
-    lineHeight: 30,
+  setText(ctxfacebook916, {
+    width: 330,
+    x: 43,
+    y: 110,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 36,
+      lineHeight: 42,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 16,
+      lineHeight: 24,
+    },
   });
 
   // TWITTER
@@ -195,37 +180,32 @@ function generateBannerCanvas(options) {
   createMidGreyGradient(ctxtwitter);
 
   addUbuntuLogo(ctxtwitter, {
-    x: 30,
-    y: 146.3,
-    width: 143,
-    height: 32,
+    x: 420,
+    y: 40,
+    width: 170,
+    height: 45,
   });
 
   addIllustration(ctxtwitter, options.illustrationUrl, {
-    x: 480,
-    y: 87,
-    width: 244,
-    height: 250,
+    orientation: "left",
   });
 
-  addText(ctxtwitter, {
-    fontWeight: 100,
-    fontSize: 36,
-    text: options.title,
-    x: 30,
-    y: 236.3,
-    maxWidth: 400,
-    lineHeight: 48,
-  });
-
-  addText(ctxtwitter, {
-    fontWeight: 300,
-    fontSize: 20.8979,
-    text: options.subtitle,
-    x: 30,
-    y: 337.3,
-    maxWidth: 400,
-    lineHeight: 30,
+  setText(ctxtwitter, {
+    width: 360,
+    x: 420,
+    y: 165,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 42,
+      lineHeight: 48,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 16,
+      lineHeight: 24,
+    },
   });
 
   // TWITTERSQUARE
@@ -250,37 +230,32 @@ function generateBannerCanvas(options) {
   createMidGreyGradient(ctxtwittersquare);
 
   addUbuntuLogo(ctxtwittersquare, {
-    x: 30,
-    y: 280,
-    width: 143,
-    height: 32,
+    x: 70,
+    y: 50,
+    width: 223,
+    height: 59,
   });
 
   addIllustration(ctxtwittersquare, options.illustrationUrl, {
-    x: 480,
-    y: 278,
-    width: 244,
-    height: 250,
+    orientation: "bottom",
   });
 
-  addText(ctxtwittersquare, {
-    fontWeight: 100,
-    fontSize: 36,
-    text: options.title,
-    x: 30,
-    y: 370,
-    maxWidth: 400,
-    lineHeight: 48,
-  });
-
-  addText(ctxtwittersquare, {
-    fontWeight: 300,
-    fontSize: 20.8979,
-    text: options.subtitle,
-    x: 30,
-    y: 471,
-    maxWidth: 400,
-    lineHeight: 30,
+  setText(ctxtwittersquare, {
+    width: 630,
+    x: 70,
+    y: 190,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 58,
+      lineHeight: 68,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 19,
+      lineHeight: 32,
+    },
   });
 }
 
