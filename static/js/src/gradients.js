@@ -60,29 +60,56 @@ function createWhiteGradient(context, dimensions) {
 
 function createLightGreyGradient(context, dimensions) {
   context.fillStyle = "rgba(0, 0, 0, 0.1)";
-  context.rotate((-10 * Math.PI) / 180);
+
+  let rotateAngle = 25;
+  let rectHeight = dimensions.height / 1.2;
+
+  if (dimensions.width > dimensions.height) {
+    rotateAngle = 10;
+  }
+
+  if (dimensions.height > dimensions.width) {
+    rectHeight = dimensions.height / 1.4;
+  }
+
+  context.rotate((-rotateAngle * Math.PI) / 180);
   context.fillRect(
     -dimensions.width,
-    dimensions.height / 1.4,
+    rectHeight,
     dimensions.width * 2,
     dimensions.height
   );
-  context.rotate((10 * Math.PI) / 180);
+  context.rotate((rotateAngle * Math.PI) / 180);
   context.fillRect(0, 0, dimensions.width, dimensions.height);
 }
 
-function createMidGreyGradient(context) {
-  const gradient = context.createLinearGradient(0, 0, 2000, 2000);
+function createMidGreyGradient(context, dimensions) {
+  context.fillStyle = "rgba(0, 0, 0, 0.1)";
 
-  gradient.addColorStop(0, "rgba(216, 216, 216, 0.54)");
-  gradient.addColorStop(0.5, "rgba(216, 216, 216, 0.54)");
+  let rotateAngle = 40;
+  let rectX = -dimensions.width;
+  let rectY = dimensions.height;
+  let rectWidth = dimensions.width * 2;
+  let rectHeight = dimensions.height;
 
-  context.globalAlpha = 0.05;
-  context.fillStyle = gradient;
-  context.rotate((50 * Math.PI) / 180);
-  context.fillRect(600, -1000, 2000, 2000);
-  context.rotate((-50 * Math.PI) / 180);
-  context.globalAlpha = 1;
+  if (dimensions.width === dimensions.height) {
+    rotateAngle = 55;
+    rectY = -dimensions.height;
+    rectWidth = dimensions.width * 1.6;
+    rectHeight = dimensions.height * 1.6;
+  }
+
+  if (dimensions.height > dimensions.width) {
+    rotateAngle = 60;
+    rectX = -dimensions.width * 1.5;
+    rectY = -dimensions.height * 1.05;
+    rectHeight = dimensions.height * 1.6;
+  }
+
+  context.rotate((-rotateAngle * Math.PI) / 180);
+  context.fillRect(rectX, rectY, rectWidth, rectHeight);
+  context.rotate((rotateAngle * Math.PI) / 180);
+  context.fillRect(0, 0, dimensions.width, dimensions.height);
 }
 
 export {

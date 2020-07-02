@@ -27,7 +27,10 @@ function generateBannerCanvas(options) {
     height: 628,
   });
 
-  // createMidGreyGradient(ctxfacebook);
+  createMidGreyGradient(ctxfacebook, {
+    width: 1200,
+    height: 628,
+  });
 
   addUbuntuLogo(ctxfacebook, {
     x: 70,
@@ -77,7 +80,10 @@ function generateBannerCanvas(options) {
     height: 1080,
   });
 
-  createMidGreyGradient(ctxfacebookmobile);
+  createMidGreyGradient(ctxfacebookmobile, {
+    width: 1080,
+    height: 1080,
+  });
 
   addUbuntuLogo(ctxfacebookmobile, {
     x: 70,
@@ -127,7 +133,10 @@ function generateBannerCanvas(options) {
     height: 500,
   });
 
-  createMidGreyGradient(ctxfacebook916);
+  createMidGreyGradient(ctxfacebook916, {
+    width: 400,
+    height: 500,
+  });
 
   addUbuntuLogo(ctxfacebook916, {
     x: 43,
@@ -177,7 +186,10 @@ function generateBannerCanvas(options) {
     height: 418,
   });
 
-  createMidGreyGradient(ctxtwitter);
+  createMidGreyGradient(ctxtwitter, {
+    width: 800,
+    height: 418,
+  });
 
   addUbuntuLogo(ctxtwitter, {
     x: 420,
@@ -227,7 +239,10 @@ function generateBannerCanvas(options) {
     height: 800,
   });
 
-  createMidGreyGradient(ctxtwittersquare);
+  createMidGreyGradient(ctxtwittersquare, {
+    width: 800,
+    height: 800,
+  });
 
   addUbuntuLogo(ctxtwittersquare, {
     x: 70,
