@@ -46,41 +46,29 @@ function createColorGradient(context, background, dimensions) {
 }
 
 function createWhiteGradient(context, dimensions) {
-  const gradient = context.createLinearGradient(
-    0,
-    0,
-    dimensions.width,
-    dimensions.height + 200
-  );
-
-  gradient.addColorStop(0, "rgba(247, 247, 247, 1)");
-  gradient.addColorStop(0.5, "rgba(247, 247, 247, 1)");
-  gradient.addColorStop(0.5, "rgba(247, 247, 247, 0)");
-  gradient.addColorStop(1, "rgba(247, 247, 247, 0)");
-
-  context.globalAlpha = 0.02;
-  context.fillStyle = gradient;
+  context.fillStyle = "rgba(255, 255, 255, 0.1)";
   context.rotate((10 * Math.PI) / 180);
-  context.fillRect(0, 0, dimensions.width * 1.25, dimensions.height);
+  context.fillRect(
+    0,
+    -dimensions.height,
+    dimensions.width * 2,
+    dimensions.height
+  );
   context.rotate((-10 * Math.PI) / 180);
+  context.fillRect(0, 0, dimensions.width, dimensions.height);
 }
 
 function createLightGreyGradient(context, dimensions) {
-  const gradient = context.createLinearGradient(
-    0,
-    0,
-    dimensions.width,
+  context.fillStyle = "rgba(0, 0, 0, 0.1)";
+  context.rotate((-10 * Math.PI) / 180);
+  context.fillRect(
+    -dimensions.width,
+    dimensions.height / 1.4,
+    dimensions.width * 2,
     dimensions.height
   );
-
-  gradient.addColorStop(0, "rgba(228, 228, 228, 0.54)");
-  gradient.addColorStop(0.5, "rgba(228, 228, 228, 0.54)");
-
-  context.globalAlpha = 0.05;
-  context.fillStyle = gradient;
-  context.rotate((-12 * Math.PI) / 180);
-  context.fillRect(-250, 400, dimensions.width * 1.25, dimensions.height);
-  context.rotate((12 * Math.PI) / 180);
+  context.rotate((10 * Math.PI) / 180);
+  context.fillRect(0, 0, dimensions.width, dimensions.height);
 }
 
 function createMidGreyGradient(context) {

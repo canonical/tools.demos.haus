@@ -25,11 +25,11 @@
         <div class="row">
           <div class="col-8">
             <form>
-              <label for="title">Title</label>
-              <input type="text" name="title" id="title" value="{{ banner_data.title }}" required>
+              <label for="title">Title (max 50 characters)</label>
+              <input type="text" name="title" id="title" value="{{ banner_data.title }}" maxlength="50" required>
 
-              <label for="subtitle">Subtitle</label>
-              <textarea name="subtitle" id="subtitle">{{ banner_data.subtitle }}</textarea>
+              <label for="subtitle">Subtitle (max 120 characters)</label>
+              <textarea name="subtitle" id="subtitle" maxlength="120" rows="4">{{ banner_data.subtitle }}</textarea>
 
               <label for="illustration_url">Illustration URL</label>
               <input type="url" name="illustration_url" id="illustration_url" value="{{ banner_data.illustration_url }}" required>
@@ -53,7 +53,7 @@
         <div class="u-fixed-width">
           <h2>Preview</h2>
 
-          <img class="u-hide" id="ubuntu-logo" src="https://assets.ubuntu.com/v1/f263d9c4-logo-ubuntu-white.svg" alt="Ubuntu" width="143" height="32">
+          <img class="u-hide" id="ubuntu-logo" src="https://assets.ubuntu.com/v1/e6a014ae-ubuntu_logo_white_orange.svg" alt="Ubuntu" width="293" height="78">
 
           <h4>Facebook &amp; LinkedIn - 1200 x 628</h4>
           <canvas id="facebook" width="1200" height="628">
