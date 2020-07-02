@@ -22,10 +22,10 @@ function generateBannerCanvas(options) {
     height: 628,
   });
 
-  // createLightGreyGradient(ctxfacebook, {
-  //   width: 1200,
-  //   height: 628,
-  // });
+  createLightGreyGradient(ctxfacebook, {
+    width: 1200,
+    height: 628,
+  });
 
   // createMidGreyGradient(ctxfacebook);
 
