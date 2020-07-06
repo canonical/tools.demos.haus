@@ -46,7 +46,7 @@ function createColorGradient(context, background, dimensions) {
 }
 
 function createWhiteGradient(context, dimensions) {
-  context.fillStyle = "rgba(255, 255, 255, 0.1)";
+  context.fillStyle = "rgba(255, 255, 255, 0.03)";
   context.rotate((10 * Math.PI) / 180);
   context.fillRect(
     0,
@@ -59,7 +59,7 @@ function createWhiteGradient(context, dimensions) {
 }
 
 function createLightGreyGradient(context, dimensions) {
-  context.fillStyle = "rgba(0, 0, 0, 0.1)";
+  context.fillStyle = "rgba(255, 255, 255, 0.05)";
 
   let rotateAngle = 25;
   let rectHeight = dimensions.height / 1.2;
@@ -84,26 +84,23 @@ function createLightGreyGradient(context, dimensions) {
 }
 
 function createMidGreyGradient(context, dimensions) {
-  context.fillStyle = "rgba(0, 0, 0, 0.1)";
+  context.fillStyle = "rgba(0, 0, 0, 0.05)";
 
   let rotateAngle = 40;
   let rectX = -dimensions.width;
-  let rectY = dimensions.height;
+  let rectY = 0;
   let rectWidth = dimensions.width * 2;
   let rectHeight = dimensions.height;
 
   if (dimensions.width === dimensions.height) {
     rotateAngle = 55;
-    rectY = -dimensions.height;
-    rectWidth = dimensions.width * 1.6;
-    rectHeight = dimensions.height * 1.6;
+    rectY = -dimensions.height / 2.5;
   }
 
   if (dimensions.height > dimensions.width) {
     rotateAngle = 60;
-    rectX = -dimensions.width * 1.5;
-    rectY = -dimensions.height * 1.05;
-    rectHeight = dimensions.height * 1.6;
+    rectX = -dimensions.width * 1.25;
+    rectY = -dimensions.width / 1.75;
   }
 
   context.rotate((-rotateAngle * Math.PI) / 180);
