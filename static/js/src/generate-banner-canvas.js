@@ -2,9 +2,9 @@ import { setText } from "./text";
 import { addUbuntuLogo, addIllustration } from "./images";
 import {
   createColorGradient,
-  createWhiteGradient,
-  createLightGreyGradient,
-  createMidGreyGradient,
+  createSuruLayerOne,
+  createSuruLayerTwo,
+  createSuruLayerThree,
 } from "./gradients";
 
 function generateBannerCanvas(options) {
@@ -17,17 +17,17 @@ function generateBannerCanvas(options) {
     height: 628,
   });
 
-  createWhiteGradient(ctxfacebook, {
+  createSuruLayerOne(ctxfacebook, {
     width: 1200,
     height: 628,
   });
 
-  createLightGreyGradient(ctxfacebook, {
+  createSuruLayerTwo(ctxfacebook, {
     width: 1200,
     height: 628,
   });
 
-  createMidGreyGradient(ctxfacebook, {
+  createSuruLayerThree(ctxfacebook, {
     width: 1200,
     height: 628,
   });
@@ -70,17 +70,17 @@ function generateBannerCanvas(options) {
     height: 1080,
   });
 
-  createWhiteGradient(ctxfacebookmobile, {
+  createSuruLayerOne(ctxfacebookmobile, {
     width: 1080,
     height: 1080,
   });
 
-  createLightGreyGradient(ctxfacebookmobile, {
+  createSuruLayerTwo(ctxfacebookmobile, {
     width: 1080,
     height: 1080,
   });
 
-  createMidGreyGradient(ctxfacebookmobile, {
+  createSuruLayerThree(ctxfacebookmobile, {
     width: 1080,
     height: 1080,
   });
@@ -123,17 +123,17 @@ function generateBannerCanvas(options) {
     height: 500,
   });
 
-  createWhiteGradient(ctxfacebook916, {
+  createSuruLayerOne(ctxfacebook916, {
     width: 400,
     height: 500,
   });
 
-  createLightGreyGradient(ctxfacebook916, {
+  createSuruLayerTwo(ctxfacebook916, {
     width: 400,
     height: 500,
   });
 
-  createMidGreyGradient(ctxfacebook916, {
+  createSuruLayerThree(ctxfacebook916, {
     width: 400,
     height: 500,
   });
@@ -176,17 +176,17 @@ function generateBannerCanvas(options) {
     height: 418,
   });
 
-  createWhiteGradient(ctxtwitter, {
+  createSuruLayerOne(ctxtwitter, {
     width: 800,
     height: 418,
   });
 
-  createLightGreyGradient(ctxtwitter, {
+  createSuruLayerTwo(ctxtwitter, {
     width: 800,
     height: 418,
   });
 
-  createMidGreyGradient(ctxtwitter, {
+  createSuruLayerThree(ctxtwitter, {
     width: 800,
     height: 418,
   });
@@ -229,17 +229,17 @@ function generateBannerCanvas(options) {
     height: 800,
   });
 
-  createWhiteGradient(ctxtwittersquare, {
+  createSuruLayerOne(ctxtwittersquare, {
     width: 800,
     height: 800,
   });
 
-  createLightGreyGradient(ctxtwittersquare, {
+  createSuruLayerTwo(ctxtwittersquare, {
     width: 800,
     height: 800,
   });
 
-  createMidGreyGradient(ctxtwittersquare, {
+  createSuruLayerThree(ctxtwittersquare, {
     width: 800,
     height: 800,
   });

@@ -45,7 +45,7 @@ function createColorGradient(context, background, dimensions) {
   context.fillRect(0, 0, dimensions.width, dimensions.height);
 }
 
-function createWhiteGradient(context, dimensions) {
+function createSuruLayerOne(context, dimensions) {
   context.fillStyle = "rgba(255, 255, 255, 0.03)";
   context.rotate((10 * Math.PI) / 180);
   context.fillRect(
@@ -58,7 +58,7 @@ function createWhiteGradient(context, dimensions) {
   context.fillRect(0, 0, dimensions.width, dimensions.height);
 }
 
-function createLightGreyGradient(context, dimensions) {
+function createSuruLayerTwo(context, dimensions) {
   context.fillStyle = "rgba(255, 255, 255, 0.05)";
 
   let rotateAngle = 25;
@@ -83,7 +83,7 @@ function createLightGreyGradient(context, dimensions) {
   context.fillRect(0, 0, dimensions.width, dimensions.height);
 }
 
-function createMidGreyGradient(context, dimensions) {
+function createSuruLayerThree(context, dimensions) {
   context.fillStyle = "rgba(0, 0, 0, 0.05)";
 
   let rotateAngle = 40;
@@ -111,7 +111,7 @@ function createMidGreyGradient(context, dimensions) {
 
 export {
   createColorGradient,
-  createWhiteGradient,
-  createLightGreyGradient,
-  createMidGreyGradient,
+  createSuruLayerOne,
+  createSuruLayerTwo,
+  createSuruLayerThree,
 };
