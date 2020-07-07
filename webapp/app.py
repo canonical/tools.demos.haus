@@ -1,7 +1,9 @@
 from canonicalwebteam.flask_base.app import FlaskBase
-from flask import render_template, request
+from flask import render_template, request, Response
+from requests import get
 
-# Rename your project below
+import os
+
 app = FlaskBase(
     __name__,
     "social-banners",
@@ -15,3 +17,15 @@ app = FlaskBase(
 @app.route("/")
 def index():
     return render_template("index.html", banner_data=request.args)
+
+
+@app.route("/fetch/<path:path>")
+def proxy(path):
+    image = get(f"{path}").content
+    filename, file_extension = os.path.splitext(path)
+    mimetype = "image/svg+xml"
+
+    if file_extension == ".png":
+        mimetype = "image/png"
+
+    return Response(image, mimetype=mimetype)
