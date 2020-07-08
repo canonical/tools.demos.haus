@@ -29,9 +29,9 @@ function createColorGradient(context, background, dimensions) {
 
   const gradient = context.createLinearGradient(
     0,
-    0,
+    dimensions.height,
     dimensions.width,
-    dimensions.height
+    0
   );
 
   const backgroundColor = backgroundColors[background] || backgroundColors.grad;
