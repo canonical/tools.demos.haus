@@ -12,3 +12,11 @@ function handleDownloads() {
 }
 
 handleDownloads();
+
+function setupDownloadLinks(canvas, linkId) {
+  const downloadUrl = canvas.toDataURL("image/jpeg");
+  const downloadLink = document.getElementById(linkId);
+  downloadLink.href = downloadUrl;
+}
+
+export { setupDownloadLinks };

@@ -109,9 +109,11 @@ function createSuruLayerThree(context, dimensions) {
   context.fillRect(0, 0, dimensions.width, dimensions.height);
 }
 
-export {
-  createColorGradient,
-  createSuruLayerOne,
-  createSuruLayerTwo,
-  createSuruLayerThree,
-};
+function createSuru(context, background, dimensions) {
+  createColorGradient(context, background, dimensions);
+  createSuruLayerOne(context, dimensions);
+  createSuruLayerTwo(context, dimensions);
+  createSuruLayerThree(context, dimensions);
+}
+
+export { createSuru };

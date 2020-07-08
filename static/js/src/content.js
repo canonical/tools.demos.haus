@@ -1,4 +1,4 @@
-function setText(context, options) {
+function setContent(context, options) {
   // create title
   context.font = `normal ${options.title.fontWeight} ${options.title.fontSize}px Ubuntu`;
   context.fillStyle = "#ffffff";
@@ -37,6 +37,7 @@ function setText(context, options) {
 
   let subtitleY = numberOfTitleLines * options.title.lineHeight + options.y;
   let subtitleLine = "";
+  let numberOfSubtitleLines = 1;
 
   for (let n = 0; n < subtitleWords.length; n++) {
     const subtitleTestLine = subtitleLine + subtitleWords[n] + " ";
@@ -45,6 +46,7 @@ function setText(context, options) {
 
     if (subtitleTestWidth > options.width && n > 0) {
       context.fillText(subtitleLine, options.x, subtitleY);
+      numberOfSubtitleLines++;
       subtitleLine = subtitleWords[n] + " ";
       subtitleY += options.subtitle.lineHeight;
     } else {
@@ -55,4 +57,4 @@ function setText(context, options) {
   context.fillText(subtitleLine, titleX, subtitleY);
 }
 
-export { setText };
+export { setContent };
