@@ -2,7 +2,7 @@ function createColorGradient(context, background, dimensions) {
   const backgroundColors = {
     grad: {
       start: "#2c001e",
-      middle: "#772953",
+      middle: "#3d0824",
       end: "#b94e47",
     },
     dark: {
