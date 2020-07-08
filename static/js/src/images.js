@@ -1,43 +1,47 @@
 function drawImage(context, image, options) {
-  let imageWidth = image.width;
-  let imageHeight = image.height;
-
   const canvasWidth = context.canvas.width;
   const canvasHeight = context.canvas.height;
-  const illustrationAspectRatio = imageHeight / imageWidth;
 
-  let illustrationWrapperWidth = canvasWidth;
-  let illustrationWrapperHeight = canvasHeight;
-  let illustrationOffsetLeft = 0;
-  let illustrationOffsetTop = 0;
+  let imageWidth = image.width;
+  let imageHeight = image.height;
+  let imageXPosition = 0;
+  let imageYPosition = 0;
 
-  if (options.orientation === "left" || options.orientation === "right") {
-    illustrationWrapperWidth = canvasWidth / 2;
+  const imageAspectRatio = imageHeight / imageWidth;
+
+  imageWidth = (canvasWidth - options.textWidth) * 0.6;
+  imageHeight = imageAspectRatio * imageWidth;
+
+  if (options.orientation === "left") {
+    imageXPosition = (canvasWidth - options.textWidth) / 2 - imageWidth / 2;
+    imageYPosition = canvasHeight / 2 - imageHeight / 2;
   }
 
   if (options.orientation === "right") {
-    illustrationOffsetLeft = illustrationWrapperWidth;
+    imageXPosition =
+      options.textWidth +
+      (canvasWidth - options.textWidth) / 2 -
+      imageWidth / 2;
+    imageYPosition = canvasHeight / 2 - imageHeight / 2;
   }
 
   if (options.orientation === "bottom") {
-    illustrationWrapperHeight = canvasHeight / 2;
-    imageWidth = illustrationWrapperHeight * 0.9;
-    imageHeight = illustrationAspectRatio * imageWidth;
-    illustrationOffsetTop = illustrationWrapperHeight;
+    imageWidth = (canvasHeight - options.textHeight) * 0.7;
+    imageHeight = imageAspectRatio * imageWidth;
+    imageXPosition = canvasWidth / 2 - imageWidth / 2;
+    imageYPosition =
+      options.textHeight +
+      (canvasHeight - options.textHeight) / 2 -
+      imageHeight / 2;
   }
 
-  if (imageWidth > illustrationWrapperWidth) {
-    imageWidth = illustrationWrapperWidth * 0.8;
-    imageHeight = illustrationAspectRatio * imageWidth;
-  }
-
-  const x =
-    illustrationOffsetLeft + (illustrationWrapperWidth - imageWidth) / 2;
-
-  const y =
-    illustrationOffsetTop + (illustrationWrapperHeight - imageHeight) / 2;
-
-  context.drawImage(image, x, y, imageWidth, imageHeight);
+  context.drawImage(
+    image,
+    imageXPosition,
+    imageYPosition,
+    imageWidth,
+    imageHeight
+  );
 }
 
 function addUbuntuLogo(context, dimensions) {

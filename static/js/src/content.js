@@ -1,60 +1,85 @@
+import { addIllustration } from "./images";
+
+function setFont(context, fontStyle) {
+  context.font = fontStyle;
+  context.fillStyle = "#ffffff";
+}
+
+function getTextLines(context, text, textWidth) {
+  const words = text.split(" ");
+  const lines = [];
+
+  let line = "";
+
+  for (let i = 0, ii = words.length; i < ii; i++) {
+    const testLine = line + words[i] + " ";
+    const metrics = context.measureText(testLine);
+    const testWidth = metrics.width;
+
+    if (testWidth > textWidth && i > 0) {
+      lines.push(line);
+      line = words[i] + " ";
+    } else {
+      line = testLine;
+    }
+  }
+
+  lines.push(line);
+
+  return lines;
+}
+
 function setContent(context, options) {
-  // create title
-  context.font = `normal ${options.title.fontWeight} ${options.title.fontSize}px Ubuntu`;
-  context.fillStyle = "#ffffff";
+  const titleFontStyle = `normal ${options.title.fontWeight} ${options.title.fontSize}px Ubuntu`;
+  const subtitleFontStyle = `normal ${options.subtitle.fontWeight} ${options.subtitle.fontSize}px Ubuntu`;
 
-  const title = options.title.text;
-  const titleWords = title.split(" ");
+  setFont(context, titleFontStyle);
 
-  let titleX = options.x;
-  let titleY = options.y;
-  let titleLine = "";
-  let numberOfTitleLines = 1;
+  const titleLines = getTextLines(context, options.title.text, options.width);
 
-  for (let n = 0; n < titleWords.length; n++) {
-    const titleTestLine = titleLine + titleWords[n] + " ";
-    const titleMetrics = context.measureText(titleTestLine);
-    const titleTestWidth = titleMetrics.width;
+  setFont(context, subtitleFontStyle);
 
-    if (titleTestWidth > options.width && n > 0) {
-      context.fillText(titleLine, titleX, titleY);
-      numberOfTitleLines++;
-      titleLine = titleWords[n] + " ";
-      titleY += options.title.lineHeight;
-    } else {
-      titleLine = titleTestLine;
-    }
+  const subtitleLines = getTextLines(
+    context,
+    options.subtitle.text,
+    options.width
+  );
+
+  let totalTitleTextHeight = options.title.lineHeight * titleLines.length;
+  let totalSubtitleTextHeight =
+    options.subtitle.lineHeight * subtitleLines.length;
+  let totalTextHeight = totalTitleTextHeight + totalSubtitleTextHeight;
+  let yPos = options.y;
+
+  if (
+    options.imageOrientation === "left" ||
+    options.imageOrientation === "right"
+  ) {
+    yPos =
+      context.canvas.height / 2 -
+      totalTextHeight / 2 +
+      options.title.lineHeight / 2;
   }
 
-  context.fillText(titleLine, titleX, titleY);
+  setFont(context, titleFontStyle);
 
-  // create subtitle
-  context.font = `normal ${options.subtitle.fontWeight} ${options.subtitle.fontSize}px Ubuntu`;
-  context.fillStyle = "#ffffff";
+  titleLines.forEach((line) => {
+    context.fillText(line, options.x, yPos);
+    yPos += options.title.lineHeight;
+  });
 
-  const subtitle = options.subtitle.text;
-  const subtitleWords = subtitle.split(" ");
+  setFont(context, subtitleFontStyle);
 
-  let subtitleY = numberOfTitleLines * options.title.lineHeight + options.y;
-  let subtitleLine = "";
-  let numberOfSubtitleLines = 1;
+  subtitleLines.forEach((line) => {
+    context.fillText(line, options.x, yPos);
+    yPos += options.subtitle.lineHeight;
+  });
 
-  for (let n = 0; n < subtitleWords.length; n++) {
-    const subtitleTestLine = subtitleLine + subtitleWords[n] + " ";
-    const subtitleMetrics = context.measureText(subtitleTestLine);
-    const subtitleTestWidth = subtitleMetrics.width;
-
-    if (subtitleTestWidth > options.width && n > 0) {
-      context.fillText(subtitleLine, options.x, subtitleY);
-      numberOfSubtitleLines++;
-      subtitleLine = subtitleWords[n] + " ";
-      subtitleY += options.subtitle.lineHeight;
-    } else {
-      subtitleLine = subtitleTestLine;
-    }
-  }
-
-  context.fillText(subtitleLine, titleX, subtitleY);
+  addIllustration(context, {
+    orientation: options.imageOrientation,
+    textHeight: totalTextHeight + options.y - options.subtitle.lineHeight,
+    textWidth: options.width,
+  });
 }
 
 export { setContent };
