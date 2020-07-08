@@ -2,8 +2,8 @@ function createColorGradient(context, background, dimensions) {
   const backgroundColors = {
     grad: {
       start: "#2c001e",
-      middle: "#772953",
-      end: "#ba534a",
+      middle: "#3d0824",
+      end: "#c44e43",
     },
     dark: {
       start: "#111111",
@@ -29,15 +29,15 @@ function createColorGradient(context, background, dimensions) {
 
   const gradient = context.createLinearGradient(
     0,
-    dimensions.height,
+    0,
     dimensions.width,
-    0
+    dimensions.height
   );
 
   const backgroundColor = backgroundColors[background] || backgroundColors.grad;
 
   gradient.addColorStop(0, backgroundColor.start);
-  gradient.addColorStop(0.62, backgroundColor.middle);
+  gradient.addColorStop(0.42, backgroundColor.middle);
   gradient.addColorStop(0.94, backgroundColor.end);
 
   context.globalAlpha = 1;
