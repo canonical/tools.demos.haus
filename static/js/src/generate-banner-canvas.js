@@ -1,36 +1,14 @@
-import { setText } from "./text";
-import { addUbuntuLogo, addIllustration } from "./images";
-import {
-  createColorGradient,
-  createSuruLayerOne,
-  createSuruLayerTwo,
-  createSuruLayerThree,
-} from "./gradients";
+import { setContent } from "./content";
+import { addUbuntuLogo } from "./images";
+import { createSuru } from "./suru";
+import { setupDownloadLinks } from "./handle-downloads";
 
 function generateBannerCanvas(options) {
   // FACEBOOK
   const canvasfacebook = document.getElementById("facebook");
   const ctxfacebook = canvasfacebook.getContext("2d");
 
-  createColorGradient(ctxfacebook, options.background, {
-    width: 1200,
-    height: 628,
-  });
-
-  createSuruLayerOne(ctxfacebook, {
-    width: 1200,
-    height: 628,
-  });
-
-  createSuruLayerTwo(ctxfacebook, {
-    width: 1200,
-    height: 628,
-  });
-
-  createSuruLayerThree(ctxfacebook, {
-    width: 1200,
-    height: 628,
-  });
+  createSuru(ctxfacebook, options.background, { width: 1200, height: 628 });
 
   addUbuntuLogo(ctxfacebook, {
     x: 70,
@@ -39,11 +17,7 @@ function generateBannerCanvas(options) {
     height: 64,
   });
 
-  addIllustration(ctxfacebook, {
-    orientation: "right",
-  });
-
-  setText(ctxfacebook, {
+  setContent(ctxfacebook, {
     width: 560,
     x: 70,
     y: 210,
@@ -59,34 +33,16 @@ function generateBannerCanvas(options) {
       fontSize: 20,
       lineHeight: 32,
     },
+    imageOrientation: "right",
   });
 
-  const facebookDownloadUrl = canvasfacebook.toDataURL("image/jpeg");
-  const facebookDownloadLink = document.getElementById(
-    "facebook-download-button"
-  );
-  facebookDownloadLink.href = facebookDownloadUrl;
+  setupDownloadLinks(canvasfacebook, "facebook-download-button");
 
   // FACEBOOK MOBILE
   const canvasfacebookmobile = document.getElementById("facebookmobile");
   const ctxfacebookmobile = canvasfacebookmobile.getContext("2d");
 
-  createColorGradient(ctxfacebookmobile, options.background, {
-    width: 1080,
-    height: 1080,
-  });
-
-  createSuruLayerOne(ctxfacebookmobile, {
-    width: 1080,
-    height: 1080,
-  });
-
-  createSuruLayerTwo(ctxfacebookmobile, {
-    width: 1080,
-    height: 1080,
-  });
-
-  createSuruLayerThree(ctxfacebookmobile, {
+  createSuru(ctxfacebookmobile, options.background, {
     width: 1080,
     height: 1080,
   });
@@ -98,11 +54,7 @@ function generateBannerCanvas(options) {
     height: 79,
   });
 
-  addIllustration(ctxfacebookmobile, {
-    orientation: "bottom",
-  });
-
-  setText(ctxfacebookmobile, {
+  setContent(ctxfacebookmobile, {
     width: 800,
     x: 70,
     y: 230,
@@ -118,36 +70,16 @@ function generateBannerCanvas(options) {
       fontSize: 24,
       lineHeight: 38,
     },
+    imageOrientation: "bottom",
   });
 
-  const facebookMobileDownloadUrl = canvasfacebookmobile.toDataURL(
-    "image/jpeg"
-  );
-  const facebookMobileDownloadLink = document.getElementById(
-    "facebook-mobile-download-button"
-  );
-  facebookMobileDownloadLink.href = facebookMobileDownloadUrl;
+  setupDownloadLinks(canvasfacebookmobile, "facebook-mobile-download-button");
 
   // FACEBOOK916
   const canvasfacebook916 = document.getElementById("facebook916");
   const ctxfacebook916 = canvasfacebook916.getContext("2d");
 
-  createColorGradient(ctxfacebook916, options.background, {
-    width: 400,
-    height: 500,
-  });
-
-  createSuruLayerOne(ctxfacebook916, {
-    width: 400,
-    height: 500,
-  });
-
-  createSuruLayerTwo(ctxfacebook916, {
-    width: 400,
-    height: 500,
-  });
-
-  createSuruLayerThree(ctxfacebook916, {
+  createSuru(ctxfacebook916, options.background, {
     width: 400,
     height: 500,
   });
@@ -159,11 +91,7 @@ function generateBannerCanvas(options) {
     height: 37,
   });
 
-  addIllustration(ctxfacebook916, {
-    orientation: "bottom",
-  });
-
-  setText(ctxfacebook916, {
+  setContent(ctxfacebook916, {
     width: 330,
     x: 43,
     y: 110,
@@ -179,34 +107,16 @@ function generateBannerCanvas(options) {
       fontSize: 16,
       lineHeight: 24,
     },
+    imageOrientation: "bottom",
   });
 
-  const facebook916DownloadUrl = canvasfacebook916.toDataURL("image/jpeg");
-  const facebook916DownloadLink = document.getElementById(
-    "facebook-9-16-download-button"
-  );
-  facebook916DownloadLink.href = facebook916DownloadUrl;
+  setupDownloadLinks(canvasfacebook916, "facebook-9-16-download-button");
 
   // TWITTER
   const canvastwitter = document.getElementById("twitter");
   const ctxtwitter = canvastwitter.getContext("2d");
 
-  createColorGradient(ctxtwitter, options.background, {
-    width: 800,
-    height: 418,
-  });
-
-  createSuruLayerOne(ctxtwitter, {
-    width: 800,
-    height: 418,
-  });
-
-  createSuruLayerTwo(ctxtwitter, {
-    width: 800,
-    height: 418,
-  });
-
-  createSuruLayerThree(ctxtwitter, {
+  createSuru(ctxtwitter, options.background, {
     width: 800,
     height: 418,
   });
@@ -218,11 +128,7 @@ function generateBannerCanvas(options) {
     height: 45,
   });
 
-  addIllustration(ctxtwitter, {
-    orientation: "left",
-  });
-
-  setText(ctxtwitter, {
+  setContent(ctxtwitter, {
     width: 360,
     x: 420,
     y: 165,
@@ -238,34 +144,16 @@ function generateBannerCanvas(options) {
       fontSize: 16,
       lineHeight: 24,
     },
+    imageOrientation: "left",
   });
 
-  const twitterWideDownloadUrl = canvastwitter.toDataURL("image/jpeg");
-  const twitterWideDownloadLink = document.getElementById(
-    "twitter-wide-download-button"
-  );
-  twitterWideDownloadLink.href = twitterWideDownloadUrl;
+  setupDownloadLinks(canvastwitter, "twitter-wide-download-button");
 
   // TWITTERSQUARE
   const canvastwittersquare = document.getElementById("twittersquare");
   const ctxtwittersquare = canvastwittersquare.getContext("2d");
 
-  createColorGradient(ctxtwittersquare, options.background, {
-    width: 800,
-    height: 800,
-  });
-
-  createSuruLayerOne(ctxtwittersquare, {
-    width: 800,
-    height: 800,
-  });
-
-  createSuruLayerTwo(ctxtwittersquare, {
-    width: 800,
-    height: 800,
-  });
-
-  createSuruLayerThree(ctxtwittersquare, {
+  createSuru(ctxtwittersquare, options.background, {
     width: 800,
     height: 800,
   });
@@ -277,11 +165,7 @@ function generateBannerCanvas(options) {
     height: 59,
   });
 
-  addIllustration(ctxtwittersquare, {
-    orientation: "bottom",
-  });
-
-  setText(ctxtwittersquare, {
+  setContent(ctxtwittersquare, {
     width: 630,
     x: 70,
     y: 190,
@@ -297,13 +181,10 @@ function generateBannerCanvas(options) {
       fontSize: 19,
       lineHeight: 32,
     },
+    imageOrientation: "bottom",
   });
 
-  const twitterSquareDownloadUrl = canvastwittersquare.toDataURL("image/jpeg");
-  const twitterSquareDownloadLink = document.getElementById(
-    "twitter-square-download-button"
-  );
-  twitterSquareDownloadLink.href = twitterSquareDownloadUrl;
+  setupDownloadLinks(canvastwittersquare, "twitter-square-download-button");
 }
 
 export { generateBannerCanvas };
