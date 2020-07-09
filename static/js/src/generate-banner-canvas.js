@@ -9,8 +9,8 @@ import {
 
 function generateBannerCanvas(options) {
   // FACEBOOK
-  var canvasfacebook = document.getElementById("facebook");
-  var ctxfacebook = canvasfacebook.getContext("2d");
+  const canvasfacebook = document.getElementById("facebook");
+  const ctxfacebook = canvasfacebook.getContext("2d");
 
   createColorGradient(ctxfacebook, options.background, {
     width: 1200,
@@ -39,7 +39,7 @@ function generateBannerCanvas(options) {
     height: 64,
   });
 
-  addIllustration(ctxfacebook, options.illustrationUrl, {
+  addIllustration(ctxfacebook, {
     orientation: "right",
   });
 
@@ -61,9 +61,15 @@ function generateBannerCanvas(options) {
     },
   });
 
+  const facebookDownloadUrl = canvasfacebook.toDataURL("image/jpeg");
+  const facebookDownloadLink = document.getElementById(
+    "facebook-download-button"
+  );
+  facebookDownloadLink.href = facebookDownloadUrl;
+
   // FACEBOOK MOBILE
-  var canvasfacebookmobile = document.getElementById("facebookmobile");
-  var ctxfacebookmobile = canvasfacebookmobile.getContext("2d");
+  const canvasfacebookmobile = document.getElementById("facebookmobile");
+  const ctxfacebookmobile = canvasfacebookmobile.getContext("2d");
 
   createColorGradient(ctxfacebookmobile, options.background, {
     width: 1080,
@@ -92,7 +98,7 @@ function generateBannerCanvas(options) {
     height: 79,
   });
 
-  addIllustration(ctxfacebookmobile, options.illustrationUrl, {
+  addIllustration(ctxfacebookmobile, {
     orientation: "bottom",
   });
 
@@ -114,9 +120,17 @@ function generateBannerCanvas(options) {
     },
   });
 
+  const facebookMobileDownloadUrl = canvasfacebookmobile.toDataURL(
+    "image/jpeg"
+  );
+  const facebookMobileDownloadLink = document.getElementById(
+    "facebook-mobile-download-button"
+  );
+  facebookMobileDownloadLink.href = facebookMobileDownloadUrl;
+
   // FACEBOOK916
-  var canvasfacebook916 = document.getElementById("facebook916");
-  var ctxfacebook916 = canvasfacebook916.getContext("2d");
+  const canvasfacebook916 = document.getElementById("facebook916");
+  const ctxfacebook916 = canvasfacebook916.getContext("2d");
 
   createColorGradient(ctxfacebook916, options.background, {
     width: 400,
@@ -145,7 +159,7 @@ function generateBannerCanvas(options) {
     height: 37,
   });
 
-  addIllustration(ctxfacebook916, options.illustrationUrl, {
+  addIllustration(ctxfacebook916, {
     orientation: "bottom",
   });
 
@@ -167,9 +181,15 @@ function generateBannerCanvas(options) {
     },
   });
 
+  const facebook916DownloadUrl = canvasfacebook916.toDataURL("image/jpeg");
+  const facebook916DownloadLink = document.getElementById(
+    "facebook-9-16-download-button"
+  );
+  facebook916DownloadLink.href = facebook916DownloadUrl;
+
   // TWITTER
-  var canvastwitter = document.getElementById("twitter");
-  var ctxtwitter = canvastwitter.getContext("2d");
+  const canvastwitter = document.getElementById("twitter");
+  const ctxtwitter = canvastwitter.getContext("2d");
 
   createColorGradient(ctxtwitter, options.background, {
     width: 800,
@@ -198,7 +218,7 @@ function generateBannerCanvas(options) {
     height: 45,
   });
 
-  addIllustration(ctxtwitter, options.illustrationUrl, {
+  addIllustration(ctxtwitter, {
     orientation: "left",
   });
 
@@ -220,9 +240,15 @@ function generateBannerCanvas(options) {
     },
   });
 
+  const twitterWideDownloadUrl = canvastwitter.toDataURL("image/jpeg");
+  const twitterWideDownloadLink = document.getElementById(
+    "twitter-wide-download-button"
+  );
+  twitterWideDownloadLink.href = twitterWideDownloadUrl;
+
   // TWITTERSQUARE
-  var canvastwittersquare = document.getElementById("twittersquare");
-  var ctxtwittersquare = canvastwittersquare.getContext("2d");
+  const canvastwittersquare = document.getElementById("twittersquare");
+  const ctxtwittersquare = canvastwittersquare.getContext("2d");
 
   createColorGradient(ctxtwittersquare, options.background, {
     width: 800,
@@ -251,7 +277,7 @@ function generateBannerCanvas(options) {
     height: 59,
   });
 
-  addIllustration(ctxtwittersquare, options.illustrationUrl, {
+  addIllustration(ctxtwittersquare, {
     orientation: "bottom",
   });
 
@@ -272,6 +298,12 @@ function generateBannerCanvas(options) {
       lineHeight: 32,
     },
   });
+
+  const twitterSquareDownloadUrl = canvastwittersquare.toDataURL("image/jpeg");
+  const twitterSquareDownloadLink = document.getElementById(
+    "twitter-square-download-button"
+  );
+  twitterSquareDownloadLink.href = twitterSquareDownloadUrl;
 }
 
 export { generateBannerCanvas };

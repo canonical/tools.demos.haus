@@ -1,4 +1,4 @@
-function drawImage(context, image, dimensions) {
+function drawImage(context, image, options) {
   let imageWidth = image.width;
   let imageHeight = image.height;
 
@@ -11,15 +11,15 @@ function drawImage(context, image, dimensions) {
   let illustrationOffsetLeft = 0;
   let illustrationOffsetTop = 0;
 
-  if (dimensions.orientation === "left" || dimensions.orientation === "right") {
+  if (options.orientation === "left" || options.orientation === "right") {
     illustrationWrapperWidth = canvasWidth / 2;
   }
 
-  if (dimensions.orientation === "right") {
+  if (options.orientation === "right") {
     illustrationOffsetLeft = illustrationWrapperWidth;
   }
 
-  if (dimensions.orientation === "bottom") {
+  if (options.orientation === "bottom") {
     illustrationWrapperHeight = canvasHeight / 2;
     imageWidth = illustrationWrapperHeight * 0.9;
     imageHeight = illustrationAspectRatio * imageWidth;
@@ -31,13 +31,13 @@ function drawImage(context, image, dimensions) {
     imageHeight = illustrationAspectRatio * imageWidth;
   }
 
-  dimensions.x =
+  const x =
     illustrationOffsetLeft + (illustrationWrapperWidth - imageWidth) / 2;
 
-  dimensions.y =
+  const y =
     illustrationOffsetTop + (illustrationWrapperHeight - imageHeight) / 2;
 
-  context.drawImage(image, dimensions.x, dimensions.y, imageWidth, imageHeight);
+  context.drawImage(image, x, y, imageWidth, imageHeight);
 }
 
 function addUbuntuLogo(context, dimensions) {
@@ -51,14 +51,9 @@ function addUbuntuLogo(context, dimensions) {
   );
 }
 
-function addIllustration(context, illustrationUrl, dimensions) {
-  const illustrationImage = new Image();
-
-  illustrationImage.addEventListener("load", () => {
-    drawImage(context, illustrationImage, dimensions);
-  });
-
-  illustrationImage.src = illustrationUrl;
+function addIllustration(context, options) {
+  const illustrationImage = document.getElementById("illustration");
+  drawImage(context, illustrationImage, options);
 }
 
 export { addUbuntuLogo, addIllustration };
