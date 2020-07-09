@@ -1,0 +1,5 @@
+domain: tools.demos.haus
+image: prod-web-team-demos.docker-registry.canonical.com/tools.demos.haus
+
+demo:
+  replicas: 1
