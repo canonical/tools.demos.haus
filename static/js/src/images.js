@@ -35,13 +35,19 @@ function drawImage(context, image, options) {
       imageHeight / 2;
   }
 
-  context.drawImage(
-    image,
-    imageXPosition,
-    imageYPosition,
-    imageWidth,
-    imageHeight
-  );
+  const newImage = new Image();
+
+  newImage.addEventListener("load", () => {
+    context.drawImage(
+      newImage,
+      imageXPosition,
+      imageYPosition,
+      imageWidth,
+      imageHeight
+    );
+  });
+
+  newImage.src = image.src;
 }
 
 function addUbuntuLogo(context, dimensions) {
