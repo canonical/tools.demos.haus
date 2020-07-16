@@ -1,4 +1,5 @@
 import { addIllustration } from "./images";
+import decodeHtmlEntities from "./utils/decodeHtmlEntities";
 
 function setFont(context, fontStyle) {
   context.font = fontStyle;
@@ -35,13 +36,21 @@ function setContent(context, options) {
 
   setFont(context, titleFontStyle);
 
-  const titleLines = getTextLines(context, options.title.text, options.width);
+  const titleText = options.title.text.replace("&amp;", "&");
+
+  const titleLines = getTextLines(
+    context,
+    decodeHtmlEntities(titleText),
+    options.width
+  );
 
   setFont(context, subtitleFontStyle);
 
+  const subtitleText = options.subtitle.text.replace("&amp;", "&");
+
   const subtitleLines = getTextLines(
     context,
-    options.subtitle.text,
+    decodeHtmlEntities(subtitleText),
     options.width
   );
 

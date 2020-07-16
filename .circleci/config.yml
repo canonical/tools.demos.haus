@@ -76,6 +76,19 @@ jobs:
           command: |
             coverage run  --source=. -m unittest discover tests
             bash <(curl -s https://codecov.io/bash) -cF python
+  test-js:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Test JS
+        run: |
+          yarn test-js
+          bash <(curl -s https://codecov.io/bash) -cF javascript
 workflows:
   version: 2
   build:
@@ -84,3 +97,4 @@ workflows:
       - lint-scss
       - lint-python
       - test-python
+      - test-js

@@ -1,6 +1,7 @@
 from canonicalwebteam.flask_base.app import FlaskBase
 from flask import render_template, request, Response
 from requests import get
+from html import unescape
 
 import os
 
@@ -16,7 +17,21 @@ app = FlaskBase(
 
 @app.route("/")
 def index():
-    return render_template("index.html", banner_data=request.args)
+    banner_data = {}
+
+    if "title" in request.args:
+        banner_data["title"] = unescape(request.args["title"])
+
+    if "subtitle" in request.args:
+        banner_data["subtitle"] = unescape(request.args["subtitle"])
+
+    if "illustration_url" in request.args:
+        banner_data["illustration_url"] = request.args["illustration_url"]
+
+    if "background" in request.args:
+        banner_data["background"] = request.args["background"]
+
+    return render_template("index.html", banner_data=banner_data)
 
 
 @app.route("/fetch/<path:path>")
