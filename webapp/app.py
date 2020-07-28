@@ -31,16 +31,15 @@ def index():
     if "background" in request.args:
         banner_data["background"] = request.args["background"]
 
-    return render_template("index.html", banner_data=banner_data)
+    if request.args.get("image"):
+        image_url = request.args["image"]
+        image = get(f"{image_url}").content
+        filename, file_extension = os.path.splitext(image_url)
+        mimetype = "image/svg+xml"
 
+        if file_extension == ".png":
+            mimetype = "image/png"
 
-@app.route("/fetch/<path:path>")
-def proxy(path):
-    image = get(f"{path}").content
-    filename, file_extension = os.path.splitext(path)
-    mimetype = "image/svg+xml"
-
-    if file_extension == ".png":
-        mimetype = "image/png"
-
-    return Response(image, mimetype=mimetype)
+        return Response(image, mimetype=mimetype)
+    else:
+        return render_template("index.html", banner_data=banner_data)
