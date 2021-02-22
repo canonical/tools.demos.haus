@@ -203,20 +203,20 @@ function generateBannerCanvas(options) {
   });
 
   setContent(ctxdisplay728x90, {
-    width: 500,
+    width: 400,
     x: 30,
-    y: 40,
+    y: 38,
     title: {
       text: options.title,
       fontWeight: 100,
       fontSize: 28,
-      lineHeight: 28,
+      lineHeight: 26,
     },
     subtitle: {
       text: options.subtitle,
       fontWeight: 300,
       fontSize: 14,
-      lineHeight: 14,
+      lineHeight: 16,
     },
   });
 
@@ -357,9 +357,9 @@ function generateBannerCanvas(options) {
   });
 
   setContent(ctxdisplay600x100, {
-    width: 400,
+    width: 350,
     x: 30,
-    y: 45,
+    y: 43,
     title: {
       text: options.title,
       fontWeight: 100,
@@ -370,7 +370,7 @@ function generateBannerCanvas(options) {
       text: options.subtitle,
       fontWeight: 300,
       fontSize: 14,
-      lineHeight: 14,
+      lineHeight: 16,
     },
   });
 
