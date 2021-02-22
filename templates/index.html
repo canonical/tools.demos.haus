@@ -59,6 +59,11 @@
           <li><a href="#facebook-9-16-banner">Facebook 9:16 (400px &times; 500px)</a></li>
           <li><a href="#twitter-wide-banner">Twitter wide (800px &times; 418px)</a></li>
           <li><a href="#twitter-square-banner">Twitter square (800px &times; 800px)</a></li>
+          <li><a href="#display-728-90">Ad (728 &times; 90)</a></li>
+          <li><a href="#display-160-600">Ad (160 &times; 600)</a></li>
+          <li><a href="#display-300-600">Ad (300 &times; 600)</a></li>
+          <li><a href="#display-300-250">Ad (300 &times; 250)</a></li>
+          <li><a href="#display-600-100">Email (600 &times; 100)</a></li>
         </ul>
         <button class="p-button--neutral u-no-margin--bottom" id="download-all-button">Download all banners</button>
       </div>
@@ -123,6 +128,61 @@
     </div>
   </section>
 
+  <section class="p-strip u-no-padding--bottom" id="display-728-90">
+    <div class="u-fixed-width">
+      <h4>Ad banner (728px &times; 90px)</h4>
+      <a href="" class="p-button--neutral js-download-button" id="display-728-90-download-button" download="display-728-90_banner">Download banner</a>
+      <canvas id="display-728-90-canvas" width="728" height="90">
+        Your browser does not support the HTML5 canvas tag.
+      </canvas>
+      <p><a href="#header">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="p-strip u-no-padding--bottom" id="display-160-600">
+    <div class="u-fixed-width">
+      <h4>Ad banner (160px &times; 600px)</h4>
+      <a href="" class="p-button--neutral js-download-button" id="display-160-600-download-button" download="display-160-600_banner">Download banner</a>
+      <canvas id="display-160-600-canvas" width="160" height="600">
+        Your browser does not support the HTML5 canvas tag.
+      </canvas>
+      <p><a href="#header">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="p-strip u-no-padding--bottom" id="display-300-600">
+    <div class="u-fixed-width">
+      <h4>Ad banner (300px &times; 600px)</h4>
+      <a href="" class="p-button--neutral js-download-button" id="display-300-600-download-button" download="display-300-600_banner">Download banner</a>
+      <canvas id="display-300-600-canvas" width="300" height="600">
+        Your browser does not support the HTML5 canvas tag.
+      </canvas>
+      <p><a href="#header">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="p-strip u-no-padding--bottom" id="display-300-250">
+    <div class="u-fixed-width">
+      <h4>Ad banner (300px &times; 250px)</h4>
+      <a href="" class="p-button--neutral js-download-button" id="display-300-250-download-button" download="display-300-250_banner">Download banner</a>
+      <canvas id="display-300-250-canvas" width="300" height="250">
+        Your browser does not support the HTML5 canvas tag.
+      </canvas>
+      <p><a href="#header">Back to top</a></p>
+    </div>
+  </section>
+
+  <section class="p-strip u-no-padding--bottom" id="display-600-100">
+    <div class="u-fixed-width">
+      <h4>Email banner (600px &times; 100px)</h4>
+      <a href="" class="p-button--neutral js-download-button" id="display-600-100-download-button" download="display-600-100_banner">Download banner</a>
+      <canvas id="display-600-100-canvas" width="600" height="100">
+        Your browser does not support the HTML5 canvas tag.
+      </canvas>
+      <p><a href="#header">Back to top</a></p>
+    </div>
+  </section>
+
   <div class="p-modal" id="banner-form-modal" style="display: none;">
     <div class="p-modal__dialog" role="dialog" aria-labelledby="banner-form-modal-title" aria-describedby="banner-form-modal-description" style="min-width: 700px;">
       <header class="p-modal__header">
@@ -136,7 +196,7 @@
         <label for="subtitle">Subtitle (max 120 characters)</label>
         <textarea name="subtitle" id="subtitle" maxlength="120" rows="4">{{ banner_data.subtitle }}</textarea>
         <label for="illustration_url">Illustration URL</label>
-        <input type="url" name="illustration_url" id="illustration_url" value="{{ banner_data.illustration_url }}" required>
+        <input type="url" name="illustration_url" id="illustration_url" value="{{ banner_data.illustration_url }}">
         <label for="background">Background</label>
         <select name="background" id="background" value="{{ banner_data.background }}" required>
           <option value="grad" {% if banner_data.background == 'grad' %}selected{% endif %}>grad</option>
@@ -144,6 +204,7 @@
           <option value="k8s" {% if banner_data.background == 'k8s' %}selected{% endif %}>k8s</option>
           <option value="aqua" {% if banner_data.background == 'aqua' %}selected{% endif %}>aqua</option>
           <option value="snapcraft" {% if banner_data.background == 'snapcraft' %}selected{% endif %}>snapcraft</option>
+          <option value="white" {% if banner_data.background == 'white' %}selected{% endif %}>white</option>
         </select>
         <button type="submit" class="p-button--positive">Build banners</button>
       </form>

@@ -84,11 +84,13 @@ function setContent(context, options) {
     yPos += options.subtitle.lineHeight;
   });
 
-  addIllustration(context, {
-    orientation: options.imageOrientation,
-    textHeight: totalTextHeight + options.y - options.subtitle.lineHeight,
-    textWidth: options.width,
-  });
+  if (options.imageOrientation) {
+    addIllustration(context, {
+      orientation: options.imageOrientation,
+      textHeight: totalTextHeight + options.y - options.subtitle.lineHeight,
+      textWidth: options.width,
+    });
+  }
 }
 
 export { setContent };

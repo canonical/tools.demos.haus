@@ -185,6 +185,196 @@ function generateBannerCanvas(options) {
   });
 
   setupDownloadLinks(canvastwittersquare, "twitter-square-download-button");
+
+  // display-728-90
+  const canvasdisplay728x90 = document.getElementById("display-728-90-canvas");
+  const ctxdisplay728x90 = canvasdisplay728x90.getContext("2d");
+
+  createSuru(ctxdisplay728x90, options.background, {
+    width: 728,
+    height: 90,
+  });
+
+  addUbuntuLogo(ctxdisplay728x90, {
+    x: 535,
+    y: 20,
+    width: 170,
+    height: 45,
+  });
+
+  setContent(ctxdisplay728x90, {
+    width: 500,
+    x: 30,
+    y: 40,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 28,
+      lineHeight: 28,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 14,
+      lineHeight: 14,
+    },
+  });
+
+  setupDownloadLinks(canvasdisplay728x90, "display-728-90-download-button");
+
+  // display-160-600
+  const canvasdisplay160x600 = document.getElementById(
+    "display-160-600-canvas"
+  );
+  const ctxdisplay160x600 = canvasdisplay160x600.getContext("2d");
+
+  createSuru(ctxdisplay160x600, options.background, {
+    width: 160,
+    height: 600,
+  });
+
+  addUbuntuLogo(ctxdisplay160x600, {
+    x: 8,
+    y: 30,
+    width: 145,
+    height: 38,
+  });
+
+  setContent(ctxdisplay160x600, {
+    width: 130,
+    x: 8,
+    y: 130,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 42,
+      lineHeight: 48,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 16,
+      lineHeight: 24,
+    },
+    imageOrientation: "bottom",
+  });
+
+  setupDownloadLinks(canvasdisplay160x600, "display-160-600-download-button");
+
+  // display-300-600
+  const canvasdisplay300x600 = document.getElementById(
+    "display-300-600-canvas"
+  );
+  const ctxdisplay300x600 = canvasdisplay300x600.getContext("2d");
+
+  createSuru(ctxdisplay300x600, options.background, {
+    width: 300,
+    height: 600,
+  });
+
+  addUbuntuLogo(ctxdisplay300x600, {
+    x: 25,
+    y: 30,
+    width: 170,
+    height: 45,
+  });
+
+  setContent(ctxdisplay300x600, {
+    width: 250,
+    x: 25,
+    y: 130,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 42,
+      lineHeight: 48,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 16,
+      lineHeight: 24,
+    },
+    imageOrientation: "bottom",
+  });
+
+  setupDownloadLinks(canvasdisplay300x600, "display-300-600-download-button");
+
+  // display-300-250
+  const canvasdisplay300x250 = document.getElementById(
+    "display-300-250-canvas"
+  );
+  const ctxdisplay300x250 = canvasdisplay300x250.getContext("2d");
+
+  createSuru(ctxdisplay300x250, options.background, {
+    width: 300,
+    height: 250,
+  });
+
+  addUbuntuLogo(ctxdisplay300x250, {
+    x: 30,
+    y: 20,
+    width: 153,
+    height: 40,
+  });
+
+  setContent(ctxdisplay300x250, {
+    width: 250,
+    x: 30,
+    y: 105,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 32,
+      lineHeight: 32,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 16,
+      lineHeight: 24,
+    },
+  });
+
+  setupDownloadLinks(canvasdisplay300x250, "display-300-250-download-button");
+
+  // display-600-100
+  const canvasdisplay600x100 = document.getElementById(
+    "display-600-100-canvas"
+  );
+  const ctxdisplay600x100 = canvasdisplay600x100.getContext("2d");
+
+  createSuru(ctxdisplay600x100, options.background, {
+    width: 600,
+    height: 100,
+  });
+
+  addUbuntuLogo(ctxdisplay600x100, {
+    x: 435,
+    y: 25,
+    width: 153,
+    height: 40,
+  });
+
+  setContent(ctxdisplay600x100, {
+    width: 400,
+    x: 30,
+    y: 45,
+    title: {
+      text: options.title,
+      fontWeight: 100,
+      fontSize: 28,
+      lineHeight: 24,
+    },
+    subtitle: {
+      text: options.subtitle,
+      fontWeight: 300,
+      fontSize: 14,
+      lineHeight: 14,
+    },
+  });
+
+  setupDownloadLinks(canvasdisplay600x100, "display-600-100-download-button");
 }
 
 export { generateBannerCanvas };
