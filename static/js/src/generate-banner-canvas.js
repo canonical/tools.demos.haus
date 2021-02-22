@@ -13,8 +13,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxfacebook, {
     x: 70,
     y: 52,
-    width: 241,
-    height: 64,
+    width: 264,
+    height: 59,
   });
 
   setContent(ctxfacebook, {
@@ -50,8 +50,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxfacebookmobile, {
     x: 70,
     y: 52,
-    width: 295,
-    height: 79,
+    width: 290,
+    height: 65,
   });
 
   setContent(ctxfacebookmobile, {
@@ -87,8 +87,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxfacebook916, {
     x: 43,
     y: 24,
-    width: 139,
-    height: 37,
+    width: 143,
+    height: 32,
   });
 
   setContent(ctxfacebook916, {
@@ -124,8 +124,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxtwitter, {
     x: 420,
     y: 40,
-    width: 170,
-    height: 45,
+    width: 171,
+    height: 38,
   });
 
   setContent(ctxtwitter, {
@@ -161,8 +161,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxtwittersquare, {
     x: 70,
     y: 50,
-    width: 223,
-    height: 59,
+    width: 222,
+    height: 49,
   });
 
   setContent(ctxtwittersquare, {
@@ -198,8 +198,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxdisplay728x90, {
     x: 535,
     y: 20,
-    width: 170,
-    height: 45,
+    width: 177,
+    height: 39,
   });
 
   setContent(ctxdisplay728x90, {
@@ -236,8 +236,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxdisplay160x600, {
     x: 8,
     y: 30,
-    width: 145,
-    height: 38,
+    width: 142,
+    height: 31,
   });
 
   setContent(ctxdisplay160x600, {
@@ -275,8 +275,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxdisplay300x600, {
     x: 25,
     y: 30,
-    width: 170,
-    height: 45,
+    width: 177,
+    height: 39,
   });
 
   setContent(ctxdisplay300x600, {
@@ -314,8 +314,8 @@ function generateBannerCanvas(options) {
   addUbuntuLogo(ctxdisplay300x250, {
     x: 30,
     y: 20,
-    width: 153,
-    height: 40,
+    width: 159,
+    height: 35,
   });
 
   setContent(ctxdisplay300x250, {
@@ -350,10 +350,10 @@ function generateBannerCanvas(options) {
   });
 
   addUbuntuLogo(ctxdisplay600x100, {
-    x: 435,
+    x: 420,
     y: 25,
-    width: 153,
-    height: 40,
+    width: 159,
+    height: 35,
   });
 
   setContent(ctxdisplay600x100, {
