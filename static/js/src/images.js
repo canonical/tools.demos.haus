@@ -50,10 +50,10 @@ function drawImage(context, image, options) {
   newImage.src = image.src;
 }
 
-function addUbuntuLogo(context, dimensions) {
-  const ubuntuLogoImage = document.getElementById("ubuntu-logo");
+function addLogo(logo, context, dimensions) {
+  const logoImage = document.getElementById(`${logo}-logo`);
   context.drawImage(
-    ubuntuLogoImage,
+    logoImage,
     dimensions.x,
     dimensions.y,
     dimensions.width,
@@ -66,4 +66,4 @@ function addIllustration(context, options) {
   drawImage(context, illustrationImage, options);
 }
 
-export { addUbuntuLogo, addIllustration };
+export { addLogo, addIllustration };

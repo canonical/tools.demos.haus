@@ -1,5 +1,5 @@
 import { setContent } from "./content";
-import { addUbuntuLogo } from "./images";
+import { addLogo as addLogo } from "./images";
 import { createSuru } from "./suru";
 import { setupDownloadLinks } from "./handle-downloads";
 
@@ -10,7 +10,7 @@ function generateBannerCanvas(options) {
 
   createSuru(ctxfacebook, options.background, { width: 1200, height: 628 });
 
-  addUbuntuLogo(ctxfacebook, {
+  addLogo(options.logo, ctxfacebook, {
     x: 70,
     y: 52,
     width: 264,
@@ -47,7 +47,7 @@ function generateBannerCanvas(options) {
     height: 1080,
   });
 
-  addUbuntuLogo(ctxfacebookmobile, {
+  addLogo(options.logo, ctxfacebookmobile, {
     x: 70,
     y: 52,
     width: 290,
@@ -84,7 +84,7 @@ function generateBannerCanvas(options) {
     height: 500,
   });
 
-  addUbuntuLogo(ctxfacebook916, {
+  addLogo(options.logo, ctxfacebook916, {
     x: 43,
     y: 24,
     width: 143,
@@ -121,7 +121,7 @@ function generateBannerCanvas(options) {
     height: 418,
   });
 
-  addUbuntuLogo(ctxtwitter, {
+  addLogo(options.logo, ctxtwitter, {
     x: 420,
     y: 40,
     width: 171,
@@ -158,7 +158,7 @@ function generateBannerCanvas(options) {
     height: 800,
   });
 
-  addUbuntuLogo(ctxtwittersquare, {
+  addLogo(options.logo, ctxtwittersquare, {
     x: 70,
     y: 50,
     width: 222,
@@ -195,7 +195,7 @@ function generateBannerCanvas(options) {
     height: 90,
   });
 
-  addUbuntuLogo(ctxdisplay728x90, {
+  addLogo(options.logo, ctxdisplay728x90, {
     x: 535,
     y: 20,
     width: 177,
@@ -233,7 +233,7 @@ function generateBannerCanvas(options) {
     height: 600,
   });
 
-  addUbuntuLogo(ctxdisplay160x600, {
+  addLogo(options.logo, ctxdisplay160x600, {
     x: 8,
     y: 30,
     width: 142,
@@ -272,7 +272,7 @@ function generateBannerCanvas(options) {
     height: 600,
   });
 
-  addUbuntuLogo(ctxdisplay300x600, {
+  addLogo(options.logo, ctxdisplay300x600, {
     x: 25,
     y: 30,
     width: 177,
@@ -311,7 +311,7 @@ function generateBannerCanvas(options) {
     height: 250,
   });
 
-  addUbuntuLogo(ctxdisplay300x250, {
+  addLogo(options.logo, ctxdisplay300x250, {
     x: 30,
     y: 20,
     width: 159,
@@ -349,12 +349,38 @@ function generateBannerCanvas(options) {
     height: 100,
   });
 
-  addUbuntuLogo(ctxdisplay600x100, {
+  const ubuntuLogo = {
     x: 420,
     y: 25,
     width: 159,
     height: 35,
-  });
+  };
+
+  const microsoftLogo = {
+    x: 400,
+    y: 29,
+    width: 185,
+    height: 32,
+  };
+
+  const canonicalLogo = {
+    x: 420,
+    y: 25,
+    width: 159,
+    height: 35,
+  };
+
+  switch (options.logo) {
+    case "ubuntu":
+      addLogo(options.logo, ctxdisplay600x100, ubuntuLogo);
+      break;
+    case "microsoft":
+      addLogo(options.logo, ctxdisplay600x100, microsoftLogo);
+      break;
+    case "canonical":
+      addLogo(options.logo, ctxdisplay600x100, canonicalLogo);
+      break;
+  }
 
   setContent(ctxdisplay600x100, {
     width: 350,
