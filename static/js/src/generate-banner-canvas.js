@@ -113,10 +113,10 @@ function generateBannerCanvas(options) {
     });
     if (options.logo === "ubuntu+microsoft") {
       addMicrosoftLogo("vertical", ctxfacebook916, {
-        x: 225,
+        x: 250,
         y: 24,
-        width: 135,
-        height: 40,
+        width: 108,
+        height: 32,
       });
     }
   }
@@ -160,10 +160,10 @@ function generateBannerCanvas(options) {
     });
     if (options.logo === "ubuntu+microsoft") {
       addMicrosoftLogo("vertical", ctxtwitter, {
-        x: 610,
-        y: 37,
-        width: 174,
-        height: 50,
+        x: 630,
+        y: 40,
+        width: 132,
+        height: 38,
       });
     }
   }
@@ -207,10 +207,10 @@ function generateBannerCanvas(options) {
     });
     if (options.logo === "ubuntu+microsoft") {
       addMicrosoftLogo("vertical", ctxtwittersquare, {
-        x: 525,
+        x: 540,
         y: 52,
-        width: 191,
-        height: 55,
+        width: 170,
+        height: 49,
       });
     }
   }
@@ -319,10 +319,10 @@ function generateBannerCanvas(options) {
     });
 
     addMicrosoftLogo("vertical", ctxdisplay160x600, {
-      x: 8,
+      x: 10,
       y: 55,
-      width: 126,
-      height: 36,
+      width: 114,
+      height: 32,
     });
   }
 
@@ -376,10 +376,10 @@ function generateBannerCanvas(options) {
     });
 
     addMicrosoftLogo("vertical", ctxdisplay300x600, {
-      x: 155,
+      x: 175,
       y: 20,
-      width: 126,
-      height: 36,
+      width: 95,
+      height: 27,
     });
   }
   setContent(ctxdisplay300x600, {
@@ -432,10 +432,10 @@ function generateBannerCanvas(options) {
     });
 
     addMicrosoftLogo("vertical", ctxdisplay300x250, {
-      x: 158,
+      x: 170,
       y: 20,
-      width: 126,
-      height: 36,
+      width: 95,
+      height: 27,
     });
   }
 
