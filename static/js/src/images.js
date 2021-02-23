@@ -50,10 +50,27 @@ function drawImage(context, image, options) {
   newImage.src = image.src;
 }
 
-function addLogo(logo, context, dimensions) {
-  const logoImage = document.getElementById(`${logo}-logo`);
+function addUbuntuLogo(context, dimensions) {
+  const ubuntuLogoImage = document.getElementById("ubuntu-logo");
   context.drawImage(
-    logoImage,
+    ubuntuLogoImage,
+    dimensions.x,
+    dimensions.y,
+    dimensions.width,
+    dimensions.height
+  );
+}
+
+function addMicrosoftLogo(logoAlignment, context, dimensions) {
+  let microsoftLogoImage;
+  if (logoAlignment === "horizontal") {
+    microsoftLogoImage = document.getElementById("microsoft-logo-horizontal");
+  } else if (logoAlignment === "vertical") {
+    microsoftLogoImage = document.getElementById("microsoft-logo-vertical");
+  }
+
+  context.drawImage(
+    microsoftLogoImage,
     dimensions.x,
     dimensions.y,
     dimensions.width,
@@ -66,4 +83,4 @@ function addIllustration(context, options) {
   drawImage(context, illustrationImage, options);
 }
 
-export { addLogo, addIllustration };
+export { addUbuntuLogo, addIllustration, addMicrosoftLogo };

@@ -1,5 +1,5 @@
 import { setContent } from "./content";
-import { addLogo as addLogo } from "./images";
+import { addUbuntuLogo, addMicrosoftLogo } from "./images";
 import { createSuru } from "./suru";
 import { setupDownloadLinks } from "./handle-downloads";
 
@@ -10,12 +10,22 @@ function generateBannerCanvas(options) {
 
   createSuru(ctxfacebook, options.background, { width: 1200, height: 628 });
 
-  addLogo(options.logo, ctxfacebook, {
-    x: 70,
-    y: 52,
-    width: 264,
-    height: 59,
-  });
+  if (options.logo !== "none") {
+    addUbuntuLogo(ctxfacebook, {
+      x: 70,
+      y: 52,
+      width: 264,
+      height: 59,
+    });
+    if (options.logo === "ubuntu+microsoft") {
+      addMicrosoftLogo("horizontal", ctxfacebook, {
+        x: 795,
+        y: 60,
+        width: 330,
+        height: 53,
+      });
+    }
+  }
 
   setContent(ctxfacebook, {
     width: 560,
@@ -47,12 +57,22 @@ function generateBannerCanvas(options) {
     height: 1080,
   });
 
-  addLogo(options.logo, ctxfacebookmobile, {
-    x: 70,
-    y: 52,
-    width: 290,
-    height: 65,
-  });
+  if (options.logo !== "none") {
+    addUbuntuLogo(ctxfacebookmobile, {
+      x: 70,
+      y: 52,
+      width: 290,
+      height: 65,
+    });
+    if (options.logo === "ubuntu+microsoft") {
+      addMicrosoftLogo("horizontal", ctxfacebookmobile, {
+        x: 650,
+        y: 60,
+        width: 360,
+        height: 58,
+      });
+    }
+  }
 
   setContent(ctxfacebookmobile, {
     width: 800,
@@ -84,12 +104,22 @@ function generateBannerCanvas(options) {
     height: 500,
   });
 
-  addLogo(options.logo, ctxfacebook916, {
-    x: 43,
-    y: 24,
-    width: 143,
-    height: 32,
-  });
+  if (options.logo !== "none") {
+    addUbuntuLogo(ctxfacebook916, {
+      x: 43,
+      y: 24,
+      width: 143,
+      height: 32,
+    });
+    if (options.logo === "ubuntu+microsoft") {
+      addMicrosoftLogo("vertical", ctxfacebook916, {
+        x: 225,
+        y: 24,
+        width: 135,
+        height: 40,
+      });
+    }
+  }
 
   setContent(ctxfacebook916, {
     width: 330,
@@ -121,12 +151,22 @@ function generateBannerCanvas(options) {
     height: 418,
   });
 
-  addLogo(options.logo, ctxtwitter, {
-    x: 420,
-    y: 40,
-    width: 171,
-    height: 38,
-  });
+  if (options.logo !== "none") {
+    addUbuntuLogo(ctxtwitter, {
+      x: 415,
+      y: 40,
+      width: 171,
+      height: 38,
+    });
+    if (options.logo === "ubuntu+microsoft") {
+      addMicrosoftLogo("vertical", ctxtwitter, {
+        x: 610,
+        y: 37,
+        width: 174,
+        height: 50,
+      });
+    }
+  }
 
   setContent(ctxtwitter, {
     width: 360,
@@ -158,12 +198,22 @@ function generateBannerCanvas(options) {
     height: 800,
   });
 
-  addLogo(options.logo, ctxtwittersquare, {
-    x: 70,
-    y: 50,
-    width: 222,
-    height: 49,
-  });
+  if (options.logo !== "none") {
+    addUbuntuLogo(ctxtwittersquare, {
+      x: 70,
+      y: 50,
+      width: 222,
+      height: 49,
+    });
+    if (options.logo === "ubuntu+microsoft") {
+      addMicrosoftLogo("vertical", ctxtwittersquare, {
+        x: 525,
+        y: 52,
+        width: 191,
+        height: 55,
+      });
+    }
+  }
 
   setContent(ctxtwittersquare, {
     width: 630,
@@ -195,12 +245,30 @@ function generateBannerCanvas(options) {
     height: 90,
   });
 
-  addLogo(options.logo, ctxdisplay728x90, {
-    x: 535,
-    y: 20,
-    width: 177,
-    height: 39,
-  });
+  if (options.logo === "ubuntu") {
+    addUbuntuLogo(ctxdisplay728x90, {
+      x: 535,
+      y: 20,
+      width: 177,
+      height: 39,
+    });
+  }
+
+  if (options.logo === "ubuntu+microsoft") {
+    addUbuntuLogo(ctxdisplay728x90, {
+      x: 450,
+      y: 30,
+      width: 122,
+      height: 27,
+    });
+
+    addMicrosoftLogo("vertical", ctxdisplay728x90, {
+      x: 595,
+      y: 29,
+      width: 113,
+      height: 32,
+    });
+  }
 
   setContent(ctxdisplay728x90, {
     width: 400,
@@ -233,17 +301,35 @@ function generateBannerCanvas(options) {
     height: 600,
   });
 
-  addLogo(options.logo, ctxdisplay160x600, {
-    x: 8,
-    y: 30,
-    width: 142,
-    height: 31,
-  });
+  if (options.logo === "ubuntu") {
+    addUbuntuLogo(ctxdisplay160x600, {
+      x: 8,
+      y: 30,
+      width: 142,
+      height: 31,
+    });
+  }
+
+  if (options.logo === "ubuntu+microsoft") {
+    addUbuntuLogo(ctxdisplay160x600, {
+      x: 10,
+      y: 16,
+      width: 114,
+      height: 25,
+    });
+
+    addMicrosoftLogo("vertical", ctxdisplay160x600, {
+      x: 8,
+      y: 55,
+      width: 126,
+      height: 36,
+    });
+  }
 
   setContent(ctxdisplay160x600, {
     width: 130,
     x: 8,
-    y: 130,
+    y: 150,
     title: {
       text: options.title,
       fontWeight: 100,
@@ -272,13 +358,30 @@ function generateBannerCanvas(options) {
     height: 600,
   });
 
-  addLogo(options.logo, ctxdisplay300x600, {
-    x: 25,
-    y: 30,
-    width: 177,
-    height: 39,
-  });
+  if (options.logo === "ubuntu") {
+    addUbuntuLogo(ctxdisplay300x600, {
+      x: 25,
+      y: 30,
+      width: 177,
+      height: 39,
+    });
+  }
 
+  if (options.logo === "ubuntu+microsoft") {
+    addUbuntuLogo(ctxdisplay300x600, {
+      x: 22,
+      y: 20,
+      width: 122,
+      height: 27,
+    });
+
+    addMicrosoftLogo("vertical", ctxdisplay300x600, {
+      x: 155,
+      y: 20,
+      width: 126,
+      height: 36,
+    });
+  }
   setContent(ctxdisplay300x600, {
     width: 250,
     x: 25,
@@ -311,12 +414,30 @@ function generateBannerCanvas(options) {
     height: 250,
   });
 
-  addLogo(options.logo, ctxdisplay300x250, {
-    x: 30,
-    y: 20,
-    width: 159,
-    height: 35,
-  });
+  if (options.logo === "ubuntu") {
+    addUbuntuLogo(ctxdisplay300x250, {
+      x: 30,
+      y: 20,
+      width: 143,
+      height: 32,
+    });
+  }
+
+  if (options.logo === "ubuntu+microsoft") {
+    addUbuntuLogo(ctxdisplay300x250, {
+      x: 24,
+      y: 20,
+      width: 122,
+      height: 27,
+    });
+
+    addMicrosoftLogo("vertical", ctxdisplay300x250, {
+      x: 158,
+      y: 20,
+      width: 126,
+      height: 36,
+    });
+  }
 
   setContent(ctxdisplay300x250, {
     width: 250,
@@ -349,41 +470,33 @@ function generateBannerCanvas(options) {
     height: 100,
   });
 
-  const ubuntuLogo = {
-    x: 420,
-    y: 25,
-    width: 159,
-    height: 35,
-  };
+  if (options.logo === "ubuntu") {
+    addUbuntuLogo(ctxdisplay600x100, {
+      x: 420,
+      y: 25,
+      width: 159,
+      height: 35,
+    });
+  }
 
-  const microsoftLogo = {
-    x: 400,
-    y: 29,
-    width: 185,
-    height: 32,
-  };
+  if (options.logo === "ubuntu+microsoft") {
+    addUbuntuLogo(ctxdisplay600x100, {
+      x: 361,
+      y: 36,
+      width: 110,
+      height: 24,
+    });
 
-  const canonicalLogo = {
-    x: 420,
-    y: 25,
-    width: 159,
-    height: 35,
-  };
-
-  switch (options.logo) {
-    case "ubuntu":
-      addLogo(options.logo, ctxdisplay600x100, ubuntuLogo);
-      break;
-    case "microsoft":
-      addLogo(options.logo, ctxdisplay600x100, microsoftLogo);
-      break;
-    case "canonical":
-      addLogo(options.logo, ctxdisplay600x100, canonicalLogo);
-      break;
+    addMicrosoftLogo("vertical", ctxdisplay600x100, {
+      x: 485,
+      y: 35,
+      width: 101,
+      height: 28,
+    });
   }
 
   setContent(ctxdisplay600x100, {
-    width: 350,
+    width: 320,
     x: 30,
     y: 43,
     title: {

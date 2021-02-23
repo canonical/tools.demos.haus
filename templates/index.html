@@ -71,7 +71,8 @@
   </section>
 
   <img class="u-hide" id="ubuntu-logo" src="/static/img/new_ubuntu_logo.svg" alt="">
-  <img class="u-hide" id="microsoft-logo" src="/static/img/microsoft_azure_logo.svg" alt="">
+  <img class="u-hide" id="microsoft-logo-horizontal" src="/static/img/microsoft_logo_horizontal.svg" alt="">
+  <img class="u-hide" id="microsoft-logo-vertical" src="/static/img/microsoft_logo_vertical.svg" alt="">
   <img class="u-hide" id="illustration" src="/?image={{ banner_data.illustration_url }}" alt="">
 
   <section class="p-strip u-no-padding--bottom" id="facebook-and-linkedin-banner">
@@ -208,9 +209,9 @@
         </select>
         <label for="logo">Logo</label>
         <select name="logo" id="logo" value="{{ banner_data.logo }}" required>
-          <option value="canonical" {% if banner_data.logo == 'canonical' %}selected{% endif %}>Canonical</option>
           <option value="ubuntu" {% if banner_data.logo == 'ubuntu' %}selected{% endif %}>Ubuntu</option>
-          <option value="microsoft" {% if banner_data.logo == 'microsoft' %}selected{% endif %}>Microsoft</option>
+          <option value="ubuntu+microsoft" {% if banner_data.logo == 'ubuntu+microsoft' %}selected{% endif %}>Ubuntu + Microsoft</option>
+          <option value="none" {% if banner_data.logo == 'none' %}selected{% endif %}>None</option>
         </select>
         <button type="submit" class="p-button--positive">Build banners</button>
       </form>
