@@ -213,6 +213,22 @@
           <option value="ubuntu+microsoft" {% if banner_data.logo == 'ubuntu+microsoft' %}selected{% endif %}>Ubuntu + Microsoft</option>
           <option value="none" {% if banner_data.logo == 'none' %}selected{% endif %}>None</option>
         </select>
+        <label for="product">Product</label>
+        <input type="text" name="product" id="product" value="{{ banner_data.product }}" required>
+        <label for="partner">Partner</label>
+        <input type="text" name="partner" id="partner" value="{{ banner_data.partner }}" required>
+        <label for="messaging">Messaging Pillar</label>
+        <input type="text" name="messaging" id="messaging" value="{{ banner_data.messaging }}" required>
+        <label for="language">Language</label>
+        <select name="language" id="language" value="{{ banner_data.language }}" required>
+          <option value="en" {% if banner_data.language == 'en' %}selected{% endif %}>EN</option>
+          <option value="fr" {% if banner_data.language == 'fr' %}selected{% endif %}>FR</option>
+          <option value="es" {% if banner_data.language == 'es' %}selected{% endif %}>ES</option>
+          <option value="de" {% if banner_data.language == 'de' %}selected{% endif %}>DE</option>
+          <option value="it" {% if banner_data.language == 'it' %}selected{% endif %}>IT</option>
+          <option value="jp" {% if banner_data.language == 'jp' %}selected{% endif %}>JP</option>
+          <option value="cn" {% if banner_data.language == 'cn' %}selected{% endif %}>CN</option>
+        </select>
         <button type="submit" class="p-button--positive">Build banners</button>
       </form>
     </div>
@@ -226,7 +242,11 @@
         subtitle: "{{ banner_data.subtitle }}",
         illustrationUrl: "{{ banner_data.illustration_url }}",
         background: "{{ banner_data.background }}",
-        logo: "{{ banner_data.logo }}"
+        logo: "{{ banner_data.logo }}",
+        product: "{{ banner_data.product }}",
+        partner: "{{ banner_data.partner }}",
+        messaging: "{{ banner_data.messaging }}",
+        language: "{{ banner_data.language }}"
       });
     }
   </script>
