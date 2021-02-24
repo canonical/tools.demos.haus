@@ -153,7 +153,7 @@ function generateBannerCanvas(options) {
 
   if (options.logo !== "none") {
     addUbuntuLogo(ctxtwitter, {
-      x: 415,
+      x: 420,
       y: 40,
       width: 171,
       height: 38,
@@ -369,7 +369,7 @@ function generateBannerCanvas(options) {
 
   if (options.logo === "ubuntu+microsoft") {
     addUbuntuLogo(ctxdisplay300x600, {
-      x: 22,
+      x: 25,
       y: 20,
       width: 122,
       height: 27,
@@ -425,7 +425,7 @@ function generateBannerCanvas(options) {
 
   if (options.logo === "ubuntu+microsoft") {
     addUbuntuLogo(ctxdisplay300x250, {
-      x: 24,
+      x: 30,
       y: 20,
       width: 122,
       height: 27,
@@ -498,7 +498,7 @@ function generateBannerCanvas(options) {
   setContent(ctxdisplay600x100, {
     width: 320,
     x: 30,
-    y: 43,
+    y: 35,
     title: {
       text: options.title,
       fontWeight: 100,
