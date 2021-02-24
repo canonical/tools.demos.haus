@@ -34,6 +34,18 @@ def index():
     if "logo" in request.args:
         banner_data["logo"] = request.args["logo"]
 
+    if "product" in request.args:
+        banner_data["product"] = unescape(request.args["product"])
+
+    if "partner" in request.args:
+        banner_data["partner"] = unescape(request.args["partner"])
+
+    if "messaging" in request.args:
+        banner_data["messaging"] = unescape(request.args["messaging"])
+
+    if "language" in request.args:
+        banner_data["language"] = request.args["language"]
+
     if request.args.get("image"):
         image_url = request.args["image"]
         image = get(f"{image_url}").content

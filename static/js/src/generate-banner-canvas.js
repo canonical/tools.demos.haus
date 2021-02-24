@@ -46,7 +46,7 @@ function generateBannerCanvas(options) {
     imageOrientation: "right",
   });
 
-  setupDownloadLinks(canvasfacebook, "facebook-download-button");
+  setupDownloadLinks(options, canvasfacebook, "facebook-download-button");
 
   // FACEBOOK MOBILE
   const canvasfacebookmobile = document.getElementById("facebookmobile");
@@ -93,7 +93,11 @@ function generateBannerCanvas(options) {
     imageOrientation: "bottom",
   });
 
-  setupDownloadLinks(canvasfacebookmobile, "facebook-mobile-download-button");
+  setupDownloadLinks(
+    options,
+    canvasfacebookmobile,
+    "facebook-mobile-download-button"
+  );
 
   // FACEBOOK916
   const canvasfacebook916 = document.getElementById("facebook916");
@@ -140,7 +144,11 @@ function generateBannerCanvas(options) {
     imageOrientation: "bottom",
   });
 
-  setupDownloadLinks(canvasfacebook916, "facebook-9-16-download-button");
+  setupDownloadLinks(
+    options,
+    canvasfacebook916,
+    "facebook-9-16-download-button"
+  );
 
   // TWITTER
   const canvastwitter = document.getElementById("twitter");
@@ -187,7 +195,7 @@ function generateBannerCanvas(options) {
     imageOrientation: "left",
   });
 
-  setupDownloadLinks(canvastwitter, "twitter-wide-download-button");
+  setupDownloadLinks(options, canvastwitter, "twitter-wide-download-button");
 
   // TWITTERSQUARE
   const canvastwittersquare = document.getElementById("twittersquare");
@@ -234,7 +242,11 @@ function generateBannerCanvas(options) {
     imageOrientation: "bottom",
   });
 
-  setupDownloadLinks(canvastwittersquare, "twitter-square-download-button");
+  setupDownloadLinks(
+    options,
+    canvastwittersquare,
+    "twitter-square-download-button"
+  );
 
   // display-728-90
   const canvasdisplay728x90 = document.getElementById("display-728-90-canvas");
@@ -288,7 +300,11 @@ function generateBannerCanvas(options) {
     },
   });
 
-  setupDownloadLinks(canvasdisplay728x90, "display-728-90-download-button");
+  setupDownloadLinks(
+    options,
+    canvasdisplay728x90,
+    "display-728-90-download-button"
+  );
 
   // display-160-600
   const canvasdisplay160x600 = document.getElementById(
@@ -345,7 +361,11 @@ function generateBannerCanvas(options) {
     imageOrientation: "bottom",
   });
 
-  setupDownloadLinks(canvasdisplay160x600, "display-160-600-download-button");
+  setupDownloadLinks(
+    options,
+    canvasdisplay160x600,
+    "display-160-600-download-button"
+  );
 
   // display-300-600
   const canvasdisplay300x600 = document.getElementById(
@@ -401,7 +421,11 @@ function generateBannerCanvas(options) {
     imageOrientation: "bottom",
   });
 
-  setupDownloadLinks(canvasdisplay300x600, "display-300-600-download-button");
+  setupDownloadLinks(
+    options,
+    canvasdisplay300x600,
+    "display-300-600-download-button"
+  );
 
   // display-300-250
   const canvasdisplay300x250 = document.getElementById(
@@ -457,7 +481,11 @@ function generateBannerCanvas(options) {
     },
   });
 
-  setupDownloadLinks(canvasdisplay300x250, "display-300-250-download-button");
+  setupDownloadLinks(
+    options,
+    canvasdisplay300x250,
+    "display-300-250-download-button"
+  );
 
   // display-600-100
   const canvasdisplay600x100 = document.getElementById(
@@ -513,7 +541,11 @@ function generateBannerCanvas(options) {
     },
   });
 
-  setupDownloadLinks(canvasdisplay600x100, "display-600-100-download-button");
+  setupDownloadLinks(
+    options,
+    canvasdisplay600x100,
+    "display-600-100-download-button"
+  );
 }
 
 export { generateBannerCanvas };

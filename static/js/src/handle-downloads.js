@@ -13,11 +13,12 @@ function handleDownloads() {
 
 handleDownloads();
 
-function setupDownloadLinks(canvas, linkId) {
+function setupDownloadLinks(options, canvas, linkId) {
   setTimeout(() => {
     const downloadUrl = canvas.toDataURL("image/jpeg");
     const downloadLink = document.getElementById(linkId);
     downloadLink.href = downloadUrl;
+    downloadLink.download = `${options.product} | ${options.partner} | ${options.messaging} | ${options.background} | ${options.language} | ${canvas.width}x${canvas.height}`;
   }, 0);
 }
 
