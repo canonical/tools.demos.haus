@@ -285,12 +285,12 @@ function generateBannerCanvas(options) {
   setContent(ctxdisplay728x90, {
     width: 400,
     x: 30,
-    y: 38,
+    y: 34,
     title: {
       text: options.title,
       fontWeight: 100,
       fontSize: 28,
-      lineHeight: 26,
+      lineHeight: 24,
     },
     subtitle: {
       text: options.subtitle,
@@ -349,8 +349,8 @@ function generateBannerCanvas(options) {
     title: {
       text: options.title,
       fontWeight: 100,
-      fontSize: 42,
-      lineHeight: 48,
+      fontSize: 28,
+      lineHeight: 28,
     },
     subtitle: {
       text: options.subtitle,
@@ -526,7 +526,7 @@ function generateBannerCanvas(options) {
   setContent(ctxdisplay600x100, {
     width: 320,
     x: 30,
-    y: 35,
+    y: 30,
     title: {
       text: options.title,
       fontWeight: 100,
