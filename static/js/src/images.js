@@ -61,9 +61,26 @@ function addUbuntuLogo(context, dimensions) {
   );
 }
 
+function addMicrosoftLogo(logoAlignment, context, dimensions) {
+  let microsoftLogoImage;
+  if (logoAlignment === "horizontal") {
+    microsoftLogoImage = document.getElementById("microsoft-logo-horizontal");
+  } else if (logoAlignment === "vertical") {
+    microsoftLogoImage = document.getElementById("microsoft-logo-vertical");
+  }
+
+  context.drawImage(
+    microsoftLogoImage,
+    dimensions.x,
+    dimensions.y,
+    dimensions.width,
+    dimensions.height
+  );
+}
+
 function addIllustration(context, options) {
   const illustrationImage = document.getElementById("illustration");
   drawImage(context, illustrationImage, options);
 }
 
-export { addUbuntuLogo, addIllustration };
+export { addUbuntuLogo, addIllustration, addMicrosoftLogo };

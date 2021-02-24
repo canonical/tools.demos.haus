@@ -31,6 +31,9 @@ def index():
     if "background" in request.args:
         banner_data["background"] = request.args["background"]
 
+    if "logo" in request.args:
+        banner_data["logo"] = request.args["logo"]
+
     if request.args.get("image"):
         image_url = request.args["image"]
         image = get(f"{image_url}").content
