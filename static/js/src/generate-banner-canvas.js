@@ -289,7 +289,7 @@ function generateBannerCanvas(options) {
     title: {
       text: options.title,
       fontWeight: 100,
-      fontSize: 28,
+      fontSize: 24,
       lineHeight: 24,
     },
     subtitle: {
@@ -530,7 +530,7 @@ function generateBannerCanvas(options) {
     title: {
       text: options.title,
       fontWeight: 100,
-      fontSize: 28,
+      fontSize: 24,
       lineHeight: 24,
     },
     subtitle: {
