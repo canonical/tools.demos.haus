@@ -213,12 +213,17 @@
           <option value="ubuntu+microsoft" {% if banner_data.logo == 'ubuntu+microsoft' %}selected{% endif %}>Ubuntu + Microsoft</option>
           <option value="none" {% if banner_data.logo == 'none' %}selected{% endif %}>None</option>
         </select>
+        <p class="p-heading--4">File naming helpers</p>
+        <p>The file will be optionally named based on these fields in the format:</p>
+        <div class="p-code-snippet">
+          <pre class="p-code-snippet__block">{product}{partner}{messaging pillar}{background}{language}_{banner type}.jpeg</pre>
+        </div>
         <label for="product">Product</label>
-        <input type="text" name="product" id="product" value="{{ banner_data.product }}" required>
+        <input type="text" name="product" id="product" value="{{ banner_data.product }}">
         <label for="partner">Partner</label>
-        <input type="text" name="partner" id="partner" value="{{ banner_data.partner }}" required>
+        <input type="text" name="partner" id="partner" value="{{ banner_data.partner }}">
         <label for="messaging">Messaging Pillar</label>
-        <input type="text" name="messaging" id="messaging" value="{{ banner_data.messaging }}" required>
+        <input type="text" name="messaging" id="messaging" value="{{ banner_data.messaging }}">
         <label for="language">Language</label>
         <select name="language" id="language" value="{{ banner_data.language }}" required>
           <option value="en" {% if banner_data.language == 'en' %}selected{% endif %}>EN</option>
