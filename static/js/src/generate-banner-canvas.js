@@ -44,6 +44,7 @@ function generateBannerCanvas(options) {
       lineHeight: 32,
     },
     imageOrientation: "right",
+    logo: options.logo,
   });
 
   setupDownloadLinks(options, canvasfacebook, "facebook-download-button");
@@ -342,10 +343,14 @@ function generateBannerCanvas(options) {
     });
   }
 
+  let yContent160x600 = 120;
+  if (options.logo === "ubuntu+microsoft") {
+    yContent160x600 = 150;
+  }
   setContent(ctxdisplay160x600, {
     width: 130,
     x: 8,
-    y: 150,
+    y: yContent160x600,
     title: {
       text: options.title,
       fontWeight: 100,
@@ -358,7 +363,7 @@ function generateBannerCanvas(options) {
       fontSize: 16,
       lineHeight: 24,
     },
-    imageOrientation: "bottom",
+    imageOrientation: "skyscraper",
   });
 
   setupDownloadLinks(
