@@ -18,15 +18,29 @@ function drawImage(context, image, options) {
   }
 
   if (options.orientation === "right") {
+    let yPosition = canvasHeight / 2 - imageHeight / 2;
+    if (options.logo === "ubuntu+microsoft") {
+      yPosition = yPosition + 10;
+    }
     imageXPosition =
       options.textWidth +
       (canvasWidth - options.textWidth) / 2 -
       imageWidth / 2;
-    imageYPosition = canvasHeight / 2 - imageHeight / 2;
+    imageYPosition = yPosition;
   }
 
   if (options.orientation === "bottom") {
     imageWidth = (canvasHeight - options.textHeight) * 0.7;
+    imageHeight = imageAspectRatio * imageWidth;
+    imageXPosition = canvasWidth / 2 - imageWidth / 2;
+    imageYPosition =
+      options.textHeight +
+      (canvasHeight - options.textHeight) / 2 -
+      imageHeight / 2;
+  }
+
+  if (options.orientation === "skyscraper") {
+    imageWidth = 100;
     imageHeight = imageAspectRatio * imageWidth;
     imageXPosition = canvasWidth / 2 - imageWidth / 2;
     imageYPosition =

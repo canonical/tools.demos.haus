@@ -89,6 +89,7 @@ function setContent(context, options) {
       orientation: options.imageOrientation,
       textHeight: totalTextHeight + options.y - options.subtitle.lineHeight,
       textWidth: options.width,
+      logo: options.logo,
     });
   }
 }
