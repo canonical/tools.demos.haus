@@ -1,1 +1,1 @@
-canonicalwebteam.flask-base==0.7.1
+canonicalwebteam.flask-base==0.7.3
