@@ -243,8 +243,8 @@
   <script>
     if (window.generateBannerCanvas) {
       window.generateBannerCanvas.generateBannerCanvas({
-        title: "{{ banner_data.title }}",
-        subtitle: "{{ banner_data.subtitle }}",
+        title: "{{ banner_data.title|urlencode }}",
+        subtitle: "{{ banner_data.subtitle|urlencode }}",
         illustrationUrl: "{{ banner_data.illustration_url }}",
         background: "{{ banner_data.background }}",
         logo: "{{ banner_data.logo }}",
