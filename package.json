@@ -34,7 +34,7 @@
     "watch-cli": "0.2.3"
   },
   "devDependencies": {
-    "@babel/core": "7.16.7",
+    "@babel/core": "7.29.6",
     "@babel/plugin-transform-runtime": "7.16.7",
     "@babel/preset-env": "7.16.7",
     "babel-jest": "27.4.6",
